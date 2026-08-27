@@ -25,10 +25,13 @@ replies to the submission that carry one of the four scored tags.
 
 \paragraph{Crowd verdict.}
 For each post $p$ we summarize the community judgment by its \emph{YA share}
-$\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP (i.e.\ that
-fall in YA), together with the total number of verdicts the post received. To
+$\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP, together with
+the total number of verdicts the post received. A post is
+\emph{inculpating-dominant} when $\rho(p)>0.5$ and \emph{exculpating-dominant}
+when $\rho(p)<0.5$; the measure-zero set of exactly tied posts is dropped. To
 ensure a stable crowd judgment, all analyses restrict to posts with at least
-$200$ verdicts.
+$200$ verdicts, with the single exception of the paired analysis of
+\S\ref{subsec:res-duplicates}, where duplicate posts rarely reach that count.
 
 \paragraph{Scale.}
 ?? dataset size  -- number of posts, number of comments, number of pairs (top level comments and replies), number of users etc.
@@ -44,14 +47,11 @@ threads are large and mostly contested, we assign their consensus level
 annotated comments alone.
 
 \paragraph{Cross-community structure.}
-A minority of authors participate in both communities ($39{,}010$ users,
-$4.34\%$ of the combined author set); among their posts, $8{,}025$ ($6.89\%$)
+Some authors post in both communities ($39{,}010$ users,
+$4.34\%$ of the combined author set); among their posts, $4{,}658$ (??\%)
 have a near-duplicate text counterpart in the other community. These
 duplicate pairs---the same story judged by two different crowds---support the
-community-level natural experiment analysed in \S[X].
-
-
-
+community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
 
 
 \subsection{Method: four analytical dimensions}
@@ -75,59 +75,34 @@ community-level natural experiment analysed in \S[X].
 \end{table*}
 
 
-Our analyses cross-cut the data along four binary dimensions. The first three
-partition \emph{comments}, given the crowd verdict on their post; the fourth is
-the \emph{community} itself, used as a replication axis.
-
-\paragraph{Notation.}
-For a post $p$ with YA share $\rho(p)$, define its \emph{dominant verdict}
-\[
-  D(p) =
-  \begin{cases}
-    \mathrm{YA} & \text{if } \rho(p) > 0.5,\\
-    \mathrm{NA} & \text{if } \rho(p) < 0.5,
-  \end{cases}
-\]
-dropping the measure-zero set of exactly tied posts ($\rho(p)=0.5$). For a
-top-level verdict comment $c$ on post $p$, let $g(c)\in\{\mathrm{NA},\mathrm{YA}\}$
-denote its verdict group.
+Our analyses cross-cut the data along four binary dimensions
+(Table~\ref{tab:dimensions}). The first three partition \emph{comments}, given
+the crowd verdict on their post; the fourth is the \emph{community} itself, used
+as a replication axis.
 
 \subsubsection*{(1) Majority vs.\ Minority --- alignment with the crowd}
-A comment is \textbf{majority} if its verdict matches the crowd's dominant
-verdict and \textbf{minority} (dissenting) otherwise:
-\[
-  \mathrm{side}(c) =
-  \begin{cases}
-    \text{majority} & \text{if } g(c) = D(p),\\
-    \text{minority} & \text{if } g(c) \neq D(p).
-  \end{cases}
-\]
-This is our central contrast: the minority is the voice that judges a given case
+A top-level verdict comment is \textbf{majority} if its verdict group matches the
+dominant verdict of its post, and \textbf{minority} (dissenting) otherwise. This
+is our central contrast: the minority is the voice that judges a given case
 against the community's own verdict.
 
 \subsubsection*{(2) Consensus: Consensual vs.\ Contested}
-We bin posts by consensus strength, i.e.\ how lopsided the crowd verdict is,
-using the YA share $\rho(p)$:
-\begin{itemize}
-  \item \textbf{Consensual} (strong consensus): $\rho(p)\le 0.20$
-        (exculpating-dominant) or $\rho(p)\ge 0.80$ (inculpating-dominant).
-  \item \textbf{Contested} (no consensus): $0.40\le\rho(p)\le 0.60$ (near tie).
-\end{itemize}
-The majority/minority split is only sharply meaningful under consensus; the
-contested cohort serves as a control in which the two sides are near-symmetric.
-
+We bin posts by how lopsided the crowd verdict is. \textbf{Consensual} posts have
+$\rho(p)\le 0.20$ or $\rho(p)\ge 0.80$, so that one side holds at least a
+four-to-one advantage; \textbf{contested} posts have $0.40\le\rho(p)\le 0.60$, a
+near tie. Posts between these bands are excluded, leaving the two cohorts
+cleanly separated. The majority/minority split is only sharply meaningful under
+consensus; the contested cohort serves as a control in which the two sides are
+near-symmetric.
 
 \subsubsection*{(3) Accusing vs.\ Defending --- the direction of dissent}
-Within the \textbf{minority}, dissent points in one of two opposite moral
-directions relative to the crowd:
-\begin{itemize}
-  \item \textbf{Accusing}: $g(c)=\mathrm{YA}$ in an exculpating-dominant post
-        --- the dissenter blames an OP the crowd exonerated.
-  \item \textbf{Defending}: $g(c)=\mathrm{NA}$ in an inculpating-dominant post
-        --- the dissenter exonerates an OP the crowd blamed.
-\end{itemize}
-The matching majority in each post type provides a same-context baseline, so any
-accuse/defend difference is a property of the dissent itself, not of the post.
+Within the minority, dissent points in one of two opposite moral directions
+relative to the crowd. \textbf{Accusing} dissent is a YA judgment in an
+exculpating-dominant post: the dissenter blames an OP the crowd exonerated.
+\textbf{Defending} dissent is an NA judgment in an inculpating-dominant post:
+the dissenter exonerates an OP the crowd blamed. The matching majority in each
+post type provides a same-context baseline, so any accuse/defend difference is a
+property of the dissent itself, not of the post.
 
 \subsubsection*{(4) AITA vs.\ AITAH --- community as a replication axis}
 We run every analysis independently on the two communities and treat agreement
