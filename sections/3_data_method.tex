@@ -1,0 +1,155 @@
+\section{Data and Methods}
+\label{sec:data-method}
+
+\subsection{The r/AmItheAsshole and r/AITAH dataset}
+\label{subsec:dataset}
+
+We study two English-language moral-judgment communities on Reddit,
+\emph{r/AmItheAsshole} (AITA) and \emph{r/AITAH} (AITAH). In both, an original
+poster (OP) narrates an interpersonal conflict and asks whether they were in the
+wrong; other users reply with a verdict drawn from the communities' shared tag
+convention:
+\emph{NTA} (Not the Asshole, exonerating the OP),
+\emph{YTA} (You're the Asshole, blaming the OP),
+\emph{NAH} (No Assholes Here),
+\emph{ESH} (Everyone Sucks Here), and
+\emph{INFO} (more information needed).
+
+\paragraph{Verdict groups.}
+Following community usage, we collapse the four scored tags into two moral
+stances toward the OP: an \textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},
+\text{NAH}\}$ and an \textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},
+\text{ESH}\}$. The \emph{INFO} tag carries no judgment and is discarded
+throughout. We restrict attention to \emph{top-level verdict comments}: direct
+replies to the submission that carry one of the four scored tags.
+
+\paragraph{Crowd verdict.}
+For each post $p$ we summarize the community judgment by its \emph{YA share}
+$\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP (i.e.\ that
+fall in YA), together with the total number of verdicts the post received. To
+ensure a stable crowd judgment, all analyses restrict to posts with at least
+$200$ verdicts.
+
+\paragraph{Scale.}
+?? dataset size  -- number of posts, number of comments, number of pairs (top level comments and replies), number of users etc.
+
+\paragraph{Certainty-annotated subset.}
+For the language analyses we use, per community, an annotated subset of roughly
+one thousand high-volume threads in which each top-level verdict comment carries
+a human-annotated \emph{certainty} score on a four-point ordinal scale
+($4$ = blunt and assertive, e.g.\ ``NTA. That's on her.''; $1$ = hedged and
+conditional, e.g.\ ``YTA if you had the money, otherwise not.''). Because these
+threads are large and mostly contested, we assign their consensus level
+(\S\ref{subsec:method}) from the full crowd verdict rather than from the
+annotated comments alone.
+
+\paragraph{Cross-community structure.}
+A minority of authors participate in both communities ($39{,}010$ users,
+$4.34\%$ of the combined author set); among their posts, $8{,}025$ ($6.89\%$)
+have a near-duplicate text counterpart in the other community. These
+duplicate pairs---the same story judged by two different crowds---support the
+community-level natural experiment analysed in \S[X].
+
+
+
+
+
+\subsection{Method: four analytical dimensions}
+\label{subsec:method}
+
+
+\begin{table*}[t]
+  \centering
+  \begin{tabular}{@{}lll@{}}
+    \toprule
+    Dimension & Levels & Defined by \\
+    \midrule
+    (1) Alignment       & majority / minority        & comment verdict vs.\ dominant verdict \\
+    (2) Consensus       & consensual / contested     & YA share ($\le.2$/$\ge.8$ vs.\ $.4$--$.6$) \\
+    (3) Dissent direction & accusing / defending     & minority verdict $\times$ dominant verdict \\
+    (4) Community       & AITA / AITAH               & source subreddit \\
+    \bottomrule
+  \end{tabular}
+  \caption{The four analytical dimensions.}
+  \label{tab:dimensions}
+\end{table*}
+
+
+Our analyses cross-cut the data along four binary dimensions. The first three
+partition \emph{comments}, given the crowd verdict on their post; the fourth is
+the \emph{community} itself, used as a replication axis.
+
+\paragraph{Notation.}
+For a post $p$ with YA share $\rho(p)$, define its \emph{dominant verdict}
+\[
+  D(p) =
+  \begin{cases}
+    \mathrm{YA} & \text{if } \rho(p) > 0.5,\\
+    \mathrm{NA} & \text{if } \rho(p) < 0.5,
+  \end{cases}
+\]
+dropping the measure-zero set of exactly tied posts ($\rho(p)=0.5$). For a
+top-level verdict comment $c$ on post $p$, let $g(c)\in\{\mathrm{NA},\mathrm{YA}\}$
+denote its verdict group.
+
+\subsubsection*{(1) Majority vs.\ Minority --- alignment with the crowd}
+A comment is \textbf{majority} if its verdict matches the crowd's dominant
+verdict and \textbf{minority} (dissenting) otherwise:
+\[
+  \mathrm{side}(c) =
+  \begin{cases}
+    \text{majority} & \text{if } g(c) = D(p),\\
+    \text{minority} & \text{if } g(c) \neq D(p).
+  \end{cases}
+\]
+This is our central contrast: the minority is the voice that judges a given case
+against the community's own verdict.
+
+\subsubsection*{(2) Consensus: Consensual vs.\ Contested}
+We bin posts by consensus strength, i.e.\ how lopsided the crowd verdict is,
+using the YA share $\rho(p)$:
+\begin{itemize}
+  \item \textbf{Consensual} (strong consensus): $\rho(p)\le 0.20$
+        (exculpating-dominant) or $\rho(p)\ge 0.80$ (inculpating-dominant).
+  \item \textbf{Contested} (no consensus): $0.40\le\rho(p)\le 0.60$ (near tie).
+\end{itemize}
+The majority/minority split is only sharply meaningful under consensus; the
+contested cohort serves as a control in which the two sides are near-symmetric.
+
+
+\subsubsection*{(3) Accusing vs.\ Defending --- the direction of dissent}
+Within the \textbf{minority}, dissent points in one of two opposite moral
+directions relative to the crowd:
+\begin{itemize}
+  \item \textbf{Accusing}: $g(c)=\mathrm{YA}$ in an exculpating-dominant post
+        --- the dissenter blames an OP the crowd exonerated.
+  \item \textbf{Defending}: $g(c)=\mathrm{NA}$ in an inculpating-dominant post
+        --- the dissenter exonerates an OP the crowd blamed.
+\end{itemize}
+The matching majority in each post type provides a same-context baseline, so any
+accuse/defend difference is a property of the dissent itself, not of the post.
+
+\subsubsection*{(4) AITA vs.\ AITAH --- community as a replication axis}
+We run every analysis independently on the two communities and treat agreement
+across them as evidence of a structural, rather than community-specific, effect.
+
+\paragraph{The 18-hour rule.}
+?? blahblah
+
+\paragraph{Measures.}
+For a top-level verdict comment we compute:
+\begin{description}
+  \item[Score] its net score, i.e.\ upvotes minus downvotes.
+  \item[Direct replies] the number of comments that reply directly to it.
+  \item[Reply depth] the number of nested reply levels beneath it
+        ($0$ = no reply, $1$ = direct replies only, $2$ = a reply itself drew a
+        reply, and so on), obtained by recursively traversing its reply subtree.
+  \item[Thread score] the sum of net scores over the comment and its entire
+        reply subtree---the total attention of the discussion it seeds.
+  \item[Certainty] the annotated one-to-four assertiveness score (annotated
+        subset only).
+\end{description}
+Because traversing the full reply forest is prohibitively expensive, the
+depth- and thread-score measures are computed on a uniform random sample of
+posts (the sample size is reported with each result); all other measures use the
+full filtered data.
