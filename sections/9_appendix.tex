@@ -4,13 +4,13 @@
 \label{sec:appendix-tags}
 
 Both communities ask commenters to open a top-level reply with one of seven
-verdict tags (Table~\ref{tab:tags}). Four of them---\emph{NTA}, \emph{YTA},
-\emph{NAH}, \emph{ESH}---judge what the OP actually did, and are the ones the
-analysis uses, collapsed into the exculpating group $\mathrm{NA}$ and the
-inculpating group $\mathrm{YA}$ (\S\ref{subsec:dataset}). \emph{YWBTA} and
-\emph{YWNBTA} are the hypothetical forms, used when the OP asks about an action
-not yet taken, and \emph{INFO} declines to judge pending further detail; all
-three are discarded.
+verdict tags (Table~\ref{tab:tags}). Six of them assign blame and enter the
+analysis; \emph{INFO} alone declines to judge and is discarded. \emph{YWBTA}
+and \emph{YWNBTA} are the hypothetical forms, used when the OP asks about an
+action not yet taken rather than one already taken; because they point the
+blame in the same direction as \emph{YTA} and \emph{NTA}, we fold them into
+those tags, leaving the four that make up the exculpating group $\mathrm{NA}$
+and the inculpating group $\mathrm{YA}$ (\S\ref{subsec:dataset}).
 
 The vocabularies are otherwise identical, with one difference in surface form:
 AITAH additionally accepts H-suffixed aliases of the four OP-directed tags
@@ -25,20 +25,21 @@ their unsuffixed counterparts before any analysis. \emph{NAH}, \emph{ESH}, and
     Tag & Group & Meaning \\
     \midrule
     NTA     & $\mathrm{NA}$ & Not the Asshole---the OP is not, and the other person is \\
+    YWNBTA  & $\mathrm{NA}$ & You Would Not Be the Asshole---as \emph{NTA}, for an action not yet taken \\
     NAH     & $\mathrm{NA}$ & No Assholes Here---nobody in the situation is at fault \\
     \addlinespace[2pt]
     YTA     & $\mathrm{YA}$ & You're the Asshole---the OP is, and the other person is not \\
+    YWBTA   & $\mathrm{YA}$ & You Would Be the Asshole---as \emph{YTA}, for an action not yet taken \\
     ESH     & $\mathrm{YA}$ & Everyone Sucks Here---the OP and the other parties are all at fault \\
     \addlinespace[2pt]
-    YWNBTA  & ---           & You Would Not Be the Asshole---for an action not yet taken \\
-    YWBTA   & ---           & You Would Be the Asshole---for an action not yet taken \\
     INFO    & ---           & Not Enough Info---more detail is needed to judge \\
     \bottomrule
   \end{tabular}
-  \caption{The verdict tags shared by AITA and AITAH. The first four state a
-  judgment on what the OP actually did and are collapsed into the exculpating
-  group $\mathrm{NA}$ and the inculpating group $\mathrm{YA}$; the last three
-  state no realized verdict and are discarded. AITAH also accepts H-suffixed
+  \caption{The verdict tags shared by AITA and AITAH. Six assign blame and are
+  collapsed into the exculpating group $\mathrm{NA}$ and the inculpating group
+  $\mathrm{YA}$, with the hypothetical forms \emph{YWNBTA} and \emph{YWBTA}
+  folded into \emph{NTA} and \emph{YTA}; \emph{INFO} states no judgment and is
+  discarded. AITAH also accepts H-suffixed
   aliases of the four OP-directed tags (\emph{NTAH}, \emph{YTAH},
   \emph{YWNBTAH}, \emph{YWBTAH}), normalised to the forms shown here.}
   \label{tab:tags}
