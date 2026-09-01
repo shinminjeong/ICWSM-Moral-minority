@@ -4,9 +4,16 @@
 \subsection{The r/AmItheAsshole and r/AITAH dataset}
 \label{subsec:dataset}
 
-We study two English-language moral-judgment communities on Reddit,
-\emph{r/AmItheAsshole} (AITA) and \emph{r/AITAH} (AITAH). In both, an original
-poster (OP) narrates an interpersonal conflict and asks whether they were in the
+We study two moral-judgment communities on Reddit,
+\emph{r/AmItheAsshole} (AITA) and \emph{r/AITAH} (AITAH). 
+In both, an original poster (OP) narrates an interpersonal conflict 
+in their life choices about various moral dilemmas, and 
+the community responds with verdicts that judge the OP's behavior. 
+The OP's post is tagged with a title flair indicating the type of situation
+(e.g., \emph{Family}, \emph{Work}, \emph{Relationship}), and the post body 
+describes the situation in detail. 
+The OP then requests judgment from the community, typically phrased as ``Am I the asshole?''
+and asks whether they were in the
 wrong; other users reply with a verdict drawn from the communities' shared tag
 convention:
 \emph{NTA} (Not the Asshole, exonerating the OP),
@@ -29,9 +36,17 @@ $\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP, together with
 the total number of verdicts the post received. A post is
 \emph{inculpating-dominant} when $\rho(p)>0.5$ and \emph{exculpating-dominant}
 when $\rho(p)<0.5$; the measure-zero set of exactly tied posts is dropped. To
-ensure a stable crowd judgment, all analyses restrict to posts with at least
-$200$ verdicts, with the single exception of the paired analysis of
-\S\ref{subsec:res-duplicates}, where duplicate posts rarely reach that count.
+make $\rho(p)$ a stable summary of the crowd rather than of a few early
+responders, all analyses restrict to \emph{high-volume} posts---those attracting
+more than $200$ top-level verdicts. This restriction is relaxed only for the
+paired analysis of \S\ref{subsec:res-duplicates}, where duplicate posts rarely
+reach that count.
+
+\paragraph{Collection.}
+We work from the complete public archive of submissions and comments for both
+communities over 2018--2025 (?? source), rather than from a sample. From it we
+retain top-level verdict comments and attach to each its parent post's crowd
+verdict, keeping the high-volume posts defined above.
 
 \paragraph{Scale.}
 ?? dataset size  -- number of posts, number of comments, number of pairs (top level comments and replies), number of users etc.
@@ -46,13 +61,140 @@ threads are large and mostly contested, we assign their consensus level
 (\S\ref{subsec:method}) from the full crowd verdict rather than from the
 annotated comments alone.
 
-\paragraph{Cross-community structure.}
-Some authors post in both communities ($39{,}010$ users,
-$4.34\%$ of the combined author set); among their posts, $4{,}658$ (??\%)
-have a near-duplicate text counterpart in the other community. These
-duplicate pairs---the same story judged by two different crowds---support the
-community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
+\paragraph{Two communities.}
+The two communities share this convention and cover much of the same
+interpersonal territory, but differ in age and in how far they formalize the
+crowd's judgment. AITA, created in 2013, is the older and the more procedural of
+the two: a bot tallies the top-level verdict comments and, approximately $18$
+hours after submission, assigns the post an official verdict flair that is then
+displayed to every later visitor. AITAH, created in 2021, was established as a
+more permissive alternative. It inherits the same tag vocabulary but imposes no
+verdict deadline and no official flair, and applies looser rules on which
+conflicts are admissible and how they must be framed. The pair therefore differs
+above all in \emph{whether} the collective judgment is ever formalized, which is
+what makes the community axis usable as a quasi-institutional contrast
+(\S\ref{subsec:method}).
 
+Both communities are large and active. As of September 2026, AITA reports
+$2.8$M members and roughly $130$K posts, while AITAH reports $1.5$M weekly
+visitors and $60$K weekly contributions.\footnote{Reddit exposes different
+summary statistics for the two communities, so these figures are indicative of
+scale rather than directly comparable.}
+
+\paragraph{Comparison windows.}
+The two communities do not cover the same period: AITA runs across the whole
+archive, whereas AITAH only exists from 2021 onward. We therefore use two scopes
+deliberately. Descriptive and trend comparisons, which characterise each
+community on its own terms, use each community's \emph{full} archive, so that
+within-community patterns are estimated from all available data. Every analysis
+that compares the communities directly---the content, user, and duplicate-post
+comparisons below---is instead computed on a single aligned window running from
+17 March 2021 to 23 December 2025,
+\[
+  \text{2021-03-17 00:00:00} \;\le\; \texttt{created\_utc} \;<\;
+  \text{2025-12-24 00:00:00},
+\]
+the interval over which both communities are simultaneously present in the
+archive. Fixing this window means that an AITA/AITAH difference cannot be an
+artefact of AITA's longer history or of period effects, while the unpaired trend
+analyses lose no data to an alignment they do not need.
+
+\paragraph{Post content.}
+Do the two communities discuss the same things? Substantially, but not
+identically---and the qualification matters for how far the community contrast
+can be read as institutional. We convert post texts into $768$-dimensional
+semantic embeddings using two sentence encoders,
+\texttt{BAAI/bge-base-en-v1.5} and \texttt{intfloat/e5-base-v2} (??\,cites).
+A classifier (??\,classifier) recovering a post's source community from its
+embedding alone reaches a ROC-AUC of only $0.613$ under BGE and $0.568$ under
+E5, against a chance level of $0.50$, and the UMAP projection in
+Figure~\ref{fig:umap} shows why: the two communities interleave throughout the
+map, including within the small peripheral clusters that correspond to recurring
+situation types.
+
+What difference remains, however, is systematic rather than noise. Maximum mean
+discrepancy and energy-distance tests reject equality of the two embedding
+distributions under both encoders (permutation $p=.005$ in every case;
+??\,permutations). Topic modelling (??\,method) locates the difference in
+composition rather than in kind: the communities share most topics, but AITAH
+leans towards romantic and intimate relationships, while AITA carries relatively
+more everyday disputes over housing, money, food, transport, and family
+obligation (Jensen--Shannon distance between the topic distributions $0.187$
+under BGE, $0.206$ under E5).
+
+We therefore do not claim that the two communities are topically
+interchangeable, and the design does not require it. The paired analysis of
+\S\ref{subsec:res-duplicates} holds the story itself fixed, comparing how two
+crowds judge the same text; and for the unpaired analyses we treat
+\emph{agreement} across the communities, rather than their raw difference, as
+the evidential unit (\S\ref{subsec:method}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figures/embeddings.png}
+  \caption{Topical overlap between AITA and AITAH. $768$-dimensional
+  \texttt{bge-base-en-v1.5} embeddings of post texts, projected to two
+  dimensions with UMAP and colored by source community. The two communities
+  interleave rather than separate, including within the small peripheral
+  clusters, and community is only weakly recoverable from these embeddings
+  (ROC-AUC $0.613$; $0.568$ under E5, chance $=0.50$)---though distributional
+  tests still detect a reliable difference in topic composition.}
+  \label{fig:umap}
+\end{figure}
+
+\paragraph{Shared users.}
+Within the same window the two crowds are far from disjoint, and they overlap
+asymmetrically in reading and in writing (Table~\ref{tab:shared-users}). About
+$1.08$M accounts are active in both communities, a Jaccard overlap of $20.3\%$
+of the combined user base; among \emph{authors} the overlap collapses to
+$39{,}010$ users ($4.3\%$). Users judge in both places, but they take their own
+dilemmas to one. The overlap is not an artefact of throwaway or drive-by
+accounts: restricting to users with at least $10$ or $100$ activities, or with
+at least $30$ days or one year of tenure, leaves it in a narrow $16$--$24\%$
+band.
+
+Shared users are, for the most part, genuine dual members rather than migrants.
+$55.1\%$ divide their activity relatively evenly between the two communities
+(AITAH activity share between $0.25$ and $0.75$), against $24.7\%$ mainly in
+AITA and $20.2\%$ mainly in AITAH, and activity levels are broadly comparable
+across the two---though being heavily active in AITA does not imply being
+heavily active in AITAH. Entry is nonetheless directional: most shared users are
+first observed in AITA and first appear in AITAH about three months later,
+consistent with the younger community drawing from the older one.
+
+The two user populations otherwise behave alike. Posting and commenting rates,
+average comment score, top-level comment rate, and daily activity profiles are
+broadly similar. The one salient difference is observed tenure within the
+window: $193$ days on average for AITA users against $115$ days for AITAH users.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    User cohort & Shared users & Jaccard \\
+    \midrule
+    All users                    & $1{,}081{,}782$ & $20.3\%$ \\
+    Users who posted             & $39{,}010$      & $4.3\%$  \\
+    At least 10 activities       & $194{,}843$     & $18.5\%$ \\
+    At least 100 activities      & $23{,}893$      & $16.2\%$ \\
+    Active for at least 30 days  & $459{,}720$     & $23.6\%$ \\
+    Active for at least one year & $183{,}825$     & $21.3\%$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Users shared between AITA and AITAH within the aligned window, by
+  cohort. Jaccard overlap is the shared count divided by the union of the two
+  communities' user sets for that cohort. \emph{Activities} pool a user's posts
+  and comments (??). Audience overlap is around a fifth and is stable across
+  activity and tenure thresholds, whereas authorship overlap is an order of
+  magnitude smaller.}
+  \label{tab:shared-users}
+\end{table}
+
+\paragraph{Shared posts.}
+Among the posts written by these cross-posting authors, $4{,}658$ (??\%) have a
+near-duplicate text counterpart in the other community. These duplicate
+pairs---the same story judged by two different crowds---support the
+community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
 
 \subsection{Method: four analytical dimensions}
 \label{subsec:method}
