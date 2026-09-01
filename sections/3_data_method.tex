@@ -60,12 +60,15 @@ comments, reply pairs, and users]}
 
 For the language analyses, we additionally use an annotated subset of roughly
 one thousand high-volume threads per community. Each top-level verdict comment
-in this subset has a human-annotated \emph{certainty} score on a four-point
-ordinal scale. A score of $4$ denotes a blunt and assertive judgment, such as
-``NTA. That's on her.'' A score of $1$ denotes a hedged or conditional
-judgment, such as ``YTA if you had the money, otherwise not.'' We assign each
-annotated thread to a consensus category using all retained verdict comments on
-the post, rather than only the annotated comments.
+in this subset carries a \emph{certainty} score on a four-point ordinal scale,
+assigned by a language model prompted with the instructions and worked examples
+reproduced in Appendix~\ref{sec:appendix-annotation}. A score of $4$ denotes a
+blunt and assertive judgment, such as ``NTA. That's on her.'' A score of $1$
+denotes a hedged or conditional judgment, such as ``YTA if you had the money,
+otherwise not.'' The scale measures how firmly a verdict is asserted, not which
+verdict it is, so certainty is comparable across the NA and YA groups. We
+assign each annotated thread to a consensus category using all retained verdict
+comments on the post, rather than only the annotated comments.
 
 \subsection*{Cross-community setup}
 

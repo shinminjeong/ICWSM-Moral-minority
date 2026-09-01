@@ -91,6 +91,23 @@ the evidential unit (\S\ref{subsec:method}).
 
 
 
+\subsection{Certainty Annotation}
+\label{sec:appendix-annotation}
+
+Certainty scores for the annotated subset (\S\ref{subsec:dataset}) are produced
+with the prompt reproduced in Figure~\ref{fig:prompt}. The prompt first
+restates the verdict vocabulary, then defines the four-point scale in terms of
+how the commenter hedges rather than what they conclude, so that a confident
+\emph{YTA} and a confident \emph{NTA} score alike. Level $4$ marks a single
+judgment asserted in a confident tone, level $3$ a single judgment with
+qualifications, level $2$ a leaning that still admits an alternative, and level
+$1$ an unresolved or self-contradicting judgment. Worked examples are supplied
+at each level, and the annotation is returned as JSON with a free-text
+rationale alongside the score.
+
+\textbf{[TODO: name the annotator model and version, the decoding settings, and
+report agreement against human labels on a validation sample]}
+
 \begin{figure*}[p]
 \begin{tcolorbox}[colback=gray!10, colframe=black, title=Task Prompt, width=\textwidth, fontupper=\small]
 
@@ -141,6 +158,15 @@ For the above post and comment, provide your answer as a JSON object with the fo
 \{``Reason": ``\textless str\textgreater your step-by-step reasoning for the commenter's certainty in the chosen judgement", ``Certainty": ``\textless int\textgreater"\}
 
 \end{tcolorbox}
+\caption{The annotation prompt used to score the certainty of a top-level
+verdict comment on a four-point scale. The scale targets how firmly a judgment
+is asserted, not which judgment it is: level $4$ is a single judgment stated
+with confident or emphatic language, level $3$ a single judgment carrying
+qualifications, level $2$ a leaning that still allows a competing verdict, and
+level $1$ a comment that resolves to no single judgment. Examples at each level
+are abridged here; the placeholders \{post\} and \{comment\} are filled with
+the submission text and the comment being scored.}
+\label{fig:prompt}
 \end{figure*}
 
 
