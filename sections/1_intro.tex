@@ -49,29 +49,34 @@ Are comments that accuse someone whom the crowd has largely absolved treated dif
 \textbf{RQ4. AITA/AITAH: How does dissent change as consensus develops and becomes formalized?}
 How do the prevalence and expressed certainty of minority judgments evolve over time? Do these dynamics differ between AITA, where a verdict is formally displayed after 18 hours, and AITAH, where no official verdict is imposed?
 
+
 \subsection{Method}
 We analyze more than 15 million top-level judgment comments: over 11 million from AITA and over 4 million from AITAH. Judgments are grouped into two opposing categories: YA, indicating that the focal actor is at fault, and NA, indicating that the actor is not at fault.
 
 Posts are classified by their YA share:
-Non-controversial -- YA share below 20\% or above 80\% versus Controversial -- YA share between 40\% and 60\%.
-Within each post, a comment is classified as majority or minority according to whether its judgment agrees with the dominant side. In non-controversial posts, minority comments represent dissent against strong consensus. In controversial posts, the minority label identifies the numerically smaller side of a divided discussion and serves as a comparison condition.
+Consensual -- YA share below 20\% or above 80\% versus Contested -- YA share between 40\% and 60\%.
+Within each post, a comment is classified as majority or minority according to whether its judgment agrees with the dominant side. In consensual posts, minority comments represent dissent against strong consensus. In contested posts, the minority label identifies the numerically smaller side of a divided discussion and serves as a comparison condition.
 
 We examine four dimensions of treatment:
 voting outcomes, measured by comment score;
 conversational response, measured by reply probability, reply count, and reply-tree depth;
-conversational value, measured by the aggregate score of the reply subtree;
+reception of the resulting discussion, measured by the aggregate score of the reply subtree;
 expressed certainty and temporal change, using certainty annotations from approximately 1,000 large threads.
 We also distinguish accusatory dissent—YA judgments in NA-dominant posts—from defensive dissent—NA judgments in YA-dominant posts.
 
-\subsection{Main Findings}
-First, minority status becomes consequential primarily under strong consensus. In non-controversial posts, minority comments receive substantially more replies than majority comments. In controversial posts, however, majority–minority differences are small or absent. The crowd therefore responds not to numerical minority status alone, but to an opinion’s position against a clear collective judgment.
+\subsection{Findings and Contributions}
 
-Second, strong-consensus dissent is sanctioned through voting but amplified through conversation. Minority comments receive much lower scores, including negative average scores in AITA, yet are three to five times more likely to receive replies. They are also approximately six times more likely to initiate deeper exchanges. Most of this difference occurs at conversational entry: minority comments are especially likely to start a discussion, but majority–minority differences become much smaller once an exchange is already underway.
+\begin{enumerate}
+    \item \textbf{Minority status becomes consequential only against a consensus.} In consensual posts, minority comments receive substantially lower scores and substantially more replies than majority comments. In contested posts these majority–minority differences are small or absent. The crowd therefore responds not to numerical rarity but to a judgment's position against a clear collective verdict, which is what separates ordinary disagreement from dissent.
 
-Third, the engagement created by dissent does not necessarily reward the dissenter. Even when a minority comment has a negative score, the reply subtree rooted in that comment can accumulate a positive total score. The crowd may therefore punish the initiating judgment while positively evaluating the rebuttals and discussion it generates.
+    This claim rests on a measurement choice. Existing work on the attention–approval split infers norm deviation from a comment's own low score \cite{davis2021emotional}, which leaves deviance and sanction entangled in a single variable. We instead read a comment's substantive moral judgment against the dominant judgment of its post, so that dissent is defined by content and its treatment by score, replies, and depth. Together with the contested cohort as a control—where the two sides are near-symmetric by construction—this decoupling is what makes the comparison above possible; under a score-based definition of deviance it is unavailable even in principle.
 
-Fourth, dissent is asymmetric. Accusatory dissent is punished more heavily but generates roughly 1.7–1.9 times more discussion than defensive dissent. Accusations that challenge a lenient consensus provoke confrontation, whereas defenses that challenge a condemnatory consensus are more likely to be ignored.
+    \item \textbf{The crowd votes against the dissenter but not against the discussion.} Minority comments receive much lower scores, including negative average scores in AITA, yet are three to five times more likely to receive replies and to seed reply subtrees approximately six times deeper on average. Attention and approval thus diverge on the same comments: the judgments the crowd votes down are the ones it answers. The divergence also appears within voting itself. A minority comment's own score and the aggregate score of the reply subtree it seeds move apart: even when the comment is scored negatively, the subtree rooted in it can accumulate a positive total. Our data do not identify what that positive total registers—it may reflect the reception of the discussion, or approval of the replies that rebut the dissent—but under either reading the negative evaluation stops at the initiating judgment and does not extend to the discussion it produces.
 
-Finally, dissent changes over time, but differently across the two communities. In AITA, minority certainty increases approximately linearly as discussions age, even though greater certainty does not produce greater voting rewards. AITAH shows no comparable linear increase. Importantly, AITA exhibits no visible certainty jump at the 18-hour verdict threshold; the post-verdict regression coefficient is statistically significant but substantively very small. The temporal pattern is therefore more consistent with gradual changes in the conversational environment or speaker composition than with an immediate verdict effect.
+    \item \textbf{Dissent is directionally asymmetric.} Accusing an OP the crowd absolved is punished more heavily, yet draws roughly 1.7–1.9 times more discussion, than defending an OP the crowd condemned. Accusations against a lenient consensus provoke confrontation; defenses of a condemned OP are more likely to be ignored. Sanction and attention are thus not two readings of a single severity—the moral direction of the challenge moves them apart, connecting the treatment of dissent to the asymmetry between blame and exculpation in moral judgment.
+
+    \item \textbf{Formalizing a consensus does not close down dissent.} AITA displays an official verdict approximately 18 hours after posting and AITAH does not, and a subset of stories appears in both communities, giving the same narrative two independent crowds. Neither comparison shows the institution suppressing the minority: no discontinuity in expressed certainty appears at the verdict threshold, and the community with a formal verdict sustains the larger minority share. Minority certainty does rise gradually as discussions age in AITA, though not in AITAH, and greater certainty earns no additional voting reward—a pattern more consistent with gradual change in the conversational environment and in who is still speaking than with an immediate verdict effect. We report these as bounds rather than as an estimated institutional effect, since the paired subsample is small and rarely reaches the verdict counts our main analyses require.
+\end{enumerate}
 
 Taken together, the findings show that a minority opinion becomes consequential dissent when there is a strong crowd consensus to oppose. Once it does, the crowd rejects the judgment but engages the challenge—extracting conversation from dissent while leaving much of its social cost with the speaker.
+
