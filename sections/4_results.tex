@@ -69,10 +69,31 @@ alone.
 
 
 \subsection{RQ4: AITA/AITAH + timeline}
+\paragraph{Certainty change over time
+18h rule}
+Figure~\ref{fig:certainty-time-series} shows the mean certainty expressed by majority- and minority-side comments during the first 25 hours after submission.
+Majority-side comments consistently express greater certainty than minority-side comments in both communities. After the 18-hour threshold, minority certainty increases in AITA but decreases temporarily in AITAH.
 
-certainty / share changes over time
+\paragraph{Minority verdict
+ratio over time}
+
+
+Certainty / share changes over time
 18h rule - Formalizing consensus amplifies dissent or not?
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/time_series_certainty.png}
+    \caption{\textbf{Majority voices remain more certain, but the flair-lock
+    threshold changes minority certainty only in AITA.}
+    Mean certainty of majority- and minority-side comments during the first
+    25 hours after submission. The vertical dashed line marks AITA's
+    approximately 18-hour AutoModerator verdict-flair lock; it is shown for
+    AITAH only as a reference threshold. AITA exhibits a significant increase
+    in certainty after this threshold ($p \approx 2 \times 10^{-9}$), whereas
+    AITAH does not ($p=.59$).}
+    \label{fig:certainty-time-series}
+\end{figure}
 
 \subsection{RQ4: AITA/AITAH + shared post in different communities}
 \label{subsec:res-duplicates}
