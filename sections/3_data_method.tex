@@ -2,31 +2,22 @@
 \label{sec:data-method}
 
 
-We study two moral-judgment communities on Reddit,
-\emph{r/AmItheAsshole} (AITA) and \emph{r/AITAH} (AITAH). 
-In both, an original poster (OP) narrates an interpersonal conflict 
-in their life choices about various moral dilemmas, and 
-the community responds with verdicts that judge the OP's behavior. 
-The OP's post is tagged with a title flair indicating the type of situation
-(e.g., \emph{Family}, \emph{Work}, \emph{Relationship}), and the post body 
-describes the situation in detail. 
-The OP then requests judgment from the community, typically phrased as ``Am I the asshole?''
-and asks whether they were in the
-wrong; other users reply with a verdict drawn from the communities' shared tag
-convention:
-\emph{NTA} (Not the Asshole, exonerating the OP),
-\emph{YTA} (You're the Asshole, blaming the OP),
-\emph{NAH} (No Assholes Here),
-\emph{ESH} (Everyone Sucks Here), and
-\emph{INFO} (more information needed).
+We study two moral-judgment communities on Reddit, \emph{r/AmItheAsshole}
+(AITA) and \emph{r/AITAH} (AITAH). In both, an original poster (OP) narrates a
+moral dilemma from their own life: the submission carries a topic flair for the
+kind of situation (e.g., \emph{Family}, \emph{Work}, \emph{Relationship}), the
+body describes the conflict in detail, and the OP asks the community to judge
+their behaviour---canonically, ``Am I the asshole?'' Other users answer in
+top-level comments that open with a verdict tag. The two communities use the
+same seven-tag vocabulary, reproduced in full in
+Appendix~\ref{sec:appendix-tags}.
 
 
 \subsection{The r/AmItheAsshole and r/AITAH dataset}
 \label{subsec:dataset}
 
-The two communities share this convention and cover much of the same
-interpersonal territory, but differ in age and in how far they formalize the
-crowd's judgment. AITA, created in 2013, is the older and the more procedural of
+The two communities differ in age and, more consequentially, in how far they
+formalize the crowd's judgment. AITA, created in 2013, is the older and the more procedural of
 the two: a bot tallies the top-level verdict comments and, approximately $18$
 hours after submission, assigns the post an official verdict flair that is then
 displayed to every later visitor. AITAH, created in 2021, was established as a
@@ -40,12 +31,17 @@ reports $2.8$M weekly visitors and roughly $130$K weekly contributions, while AI
 
 
 \subsubsection{Verdicts and the crowd judgment.}
-Following community usage, we collapse the four scored tags into two moral
-stances toward the OP: an \textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},
-\text{NAH}\}$ and an \textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},
-\text{ESH}\}$. The \emph{INFO} tag carries no judgment and is discarded
-throughout. We restrict attention to \emph{top-level verdict comments}: direct
-replies to the submission that carry one of the four scored tags. For each post
+Four of the seven tags state a judgment on what the OP actually did, and
+following community usage we collapse them into two moral stances: an
+\textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},\text{NAH}\}$ and an
+\textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},\text{ESH}\}$. The
+remaining three carry no realized verdict---\emph{INFO} requests more
+information, and \emph{YWBTA} and \emph{YWNBTA} judge an action not yet
+taken---and are discarded throughout (??). AITAH also accepts H-suffixed
+aliases (\emph{NTAH}, \emph{YTAH}, and so on), which we treat as equivalent to
+their unsuffixed counterparts (??). We restrict attention to \emph{top-level
+verdict comments}: direct replies to the submission that carry one of the four
+judgment tags. For each post
 $p$ we then summarize the community judgment by its \emph{YA share}
 $\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP, together with
 the total number of verdicts the post received. A post is
@@ -82,8 +78,7 @@ community on its own terms, use each community's \emph{full} archive, so that
 within-community patterns are estimated from all available data. Every analysis
 that compares the communities directly---the content, user, and duplicate-post
 comparisons below---is instead computed on a single aligned window running from
-17 March 2021 to 23 December 2025, 
-the interval over which both communities are simultaneously present in the
+17 March 2021 to 23 December 2025, the interval over which both communities are simultaneously present in the
 archive. Fixing this window means that an AITA/AITAH difference cannot be an
 artefact of AITA's longer history or of period effects, while the unpaired trend
 analyses lose no data to an alignment they do not need.
@@ -129,11 +124,11 @@ as the evidential unit (\S\ref{subsec:method}).
   \label{fig:umap}
 \end{figure}
 
-\subsubsection{Shared users and posts.}
+\subsubsection{Shared users.}
 Within the same window the two crowds are far from disjoint, and they overlap
 asymmetrically in reading and in writing (Table~\ref{tab:shared-users} in the
-appendix). About
-$1.08$M accounts are active in both communities, a Jaccard overlap of $20.3\%$
+appendix). About $1.08$M accounts are active in both communities, a Jaccard
+overlap of $20.3\%$
 of the combined user base; among \emph{authors} the overlap collapses to
 $39{,}010$ users ($4.3\%$). Users judge in both places, but they take their own
 dilemmas to one. The overlap is not an artefact of throwaway or drive-by
@@ -154,11 +149,24 @@ rates, average comment score, top-level comment rate, and daily activity
 profiles; the one salient difference is observed tenure within the window,
 $193$ days on average for AITA users against $115$ days for AITAH users.
 
+\subsubsection{Duplicate posts.}
+A story occasionally appears in both communities. We identify such cases by
+exact text matching rather than by similarity: after normalisation
+(??\,normalisation), two submissions are the same story when the concatenation
+of title and selftext is character-for-character identical. This yields
+$4{,}658$ cross-community pairs over $4{,}150$ distinct stories---$3{,}913$
+submitted exactly once in each community, and $237$ submitted more than once in
+at least one of them and therefore admitting several pairings. A pair is usable
+only if a YA share can be computed on both sides, which holds for $1{,}871$ of
+the $4{,}658$; the paired analysis of \S\ref{subsec:res-duplicates} works from
+those.
 
-Among the posts written by the cross-posting authors, finally, $4{,}658$ (??\%)
-have a near-duplicate text counterpart in the other community. These duplicate
-pairs---the same story judged by two different crowds---support the
-community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
+Exact matching buys control at a cost in scale. Because the text is held fixed
+word for word, a gap between a pair's two YA shares is a difference between
+crowds rather than between stories, which is what makes the comparison a
+community-level natural experiment. But the resulting sample is small, and its
+posts rarely reach the $200$-verdict threshold the rest of the paper imposes,
+so we report it as corroboration rather than as a primary result.
 
 
 
@@ -232,13 +240,12 @@ We run every analysis independently on the two communities and treat agreement
 across them as evidence of a structural, rather than community-specific, effect.
 
 \paragraph{The 18-hour rule.}
-Dimension (4) is more than a replication axis, because the two communities
-differ in one specific institutional respect. AITA assigns each post an official
-verdict flair approximately $18$ hours after submission; from that point on, a
-user arriving at the post sees the crowd's judgment stated as settled before
-reading a single comment. AITAH never does this. The rule therefore imposes a
-threshold \emph{within} a post's life: verdicts written before the mark address
-an open question, verdicts written after it address a closed one. If
+Dimension (4) is more than a replication axis, because AITA's verdict flair
+(\S\ref{subsec:dataset}) imposes a threshold \emph{within} a post's life for
+which AITAH has no counterpart. Before the mark, a verdict answers an open
+question; after it, the arriving user is shown the crowd's judgment as settled
+before reading a single comment, and a dissenting verdict contradicts something
+the community has already declared. If
 formalizing a consensus is what silences dissent, the minority should thin out
 or soften just after the flair appears.
 
