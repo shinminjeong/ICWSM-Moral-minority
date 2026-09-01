@@ -22,46 +22,8 @@ convention:
 \emph{ESH} (Everyone Sucks Here), and
 \emph{INFO} (more information needed).
 
-\paragraph{Verdict groups.}
-Following community usage, we collapse the four scored tags into two moral
-stances toward the OP: an \textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},
-\text{NAH}\}$ and an \textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},
-\text{ESH}\}$. The \emph{INFO} tag carries no judgment and is discarded
-throughout. We restrict attention to \emph{top-level verdict comments}: direct
-replies to the submission that carry one of the four scored tags.
+\subsubsection*{The two communities}
 
-\paragraph{Crowd verdict.}
-For each post $p$ we summarize the community judgment by its \emph{YA share}
-$\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP, together with
-the total number of verdicts the post received. A post is
-\emph{inculpating-dominant} when $\rho(p)>0.5$ and \emph{exculpating-dominant}
-when $\rho(p)<0.5$; the measure-zero set of exactly tied posts is dropped. To
-make $\rho(p)$ a stable summary of the crowd rather than of a few early
-responders, all analyses restrict to \emph{high-volume} posts---those attracting
-more than $200$ top-level verdicts. This restriction is relaxed only for the
-paired analysis of \S\ref{subsec:res-duplicates}, where duplicate posts rarely
-reach that count.
-
-\paragraph{Collection.}
-We work from the complete public archive of submissions and comments for both
-communities over 2018--2025 (?? source), rather than from a sample. From it we
-retain top-level verdict comments and attach to each its parent post's crowd
-verdict, keeping the high-volume posts defined above.
-
-\paragraph{Scale.}
-?? dataset size  -- number of posts, number of comments, number of pairs (top level comments and replies), number of users etc.
-
-\paragraph{Certainty-annotated subset.}
-For the language analyses we use, per community, an annotated subset of roughly
-one thousand high-volume threads in which each top-level verdict comment carries
-a human-annotated \emph{certainty} score on a four-point ordinal scale
-($4$ = blunt and assertive, e.g.\ ``NTA. That's on her.''; $1$ = hedged and
-conditional, e.g.\ ``YTA if you had the money, otherwise not.''). Because these
-threads are large and mostly contested, we assign their consensus level
-(\S\ref{subsec:method}) from the full crowd verdict rather than from the
-annotated comments alone.
-
-\paragraph{Two communities.}
 The two communities share this convention and cover much of the same
 interpersonal territory, but differ in age and in how far they formalize the
 crowd's judgment. AITA, created in 2013, is the older and the more procedural of
@@ -73,15 +35,48 @@ verdict deadline and no official flair, and applies looser rules on which
 conflicts are admissible and how they must be framed. The pair therefore differs
 above all in \emph{whether} the collective judgment is ever formalized, which is
 what makes the community axis usable as a quasi-institutional contrast
-(\S\ref{subsec:method}).
+(\S\ref{subsec:method}). Both are large and active: as of September 2026, AITA
+reports $2.8$M members and roughly $130$K posts, while AITAH reports $1.5$M
+weekly visitors and $60$K weekly contributions.\footnote{Reddit exposes
+different summary statistics for the two communities, so these figures are
+indicative of scale rather than directly comparable.}
 
-Both communities are large and active. As of September 2026, AITA reports
-$2.8$M members and roughly $130$K posts, while AITAH reports $1.5$M weekly
-visitors and $60$K weekly contributions.\footnote{Reddit exposes different
-summary statistics for the two communities, so these figures are indicative of
-scale rather than directly comparable.}
+\paragraph{Verdicts and the crowd judgment.}
+Following community usage, we collapse the four scored tags into two moral
+stances toward the OP: an \textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},
+\text{NAH}\}$ and an \textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},
+\text{ESH}\}$. The \emph{INFO} tag carries no judgment and is discarded
+throughout. We restrict attention to \emph{top-level verdict comments}: direct
+replies to the submission that carry one of the four scored tags. For each post
+$p$ we then summarize the community judgment by its \emph{YA share}
+$\rho(p)\in[0,1]$, the fraction of its verdicts that blame the OP, together with
+the total number of verdicts the post received. A post is
+\emph{inculpating-dominant} when $\rho(p)>0.5$ and \emph{exculpating-dominant}
+when $\rho(p)<0.5$; the measure-zero set of exactly tied posts is dropped. To
+make $\rho(p)$ a stable summary of the crowd rather than of a few early
+responders, all analyses restrict to \emph{high-volume} posts---those attracting
+more than $200$ top-level verdicts. This restriction is relaxed only for the
+paired analysis of \S\ref{subsec:res-duplicates}, where duplicate posts rarely
+reach that count.
 
-\paragraph{Comparison windows.}
+\paragraph{Collection and scale.}
+We work from the complete public archive of submissions and comments for both
+communities over 2018--2025 (?? source), rather than from a sample. From it we
+retain top-level verdict comments and attach to each its parent post's crowd
+verdict, keeping the high-volume posts defined above.
+?? dataset size -- number of posts, number of comments, number of pairs (top
+level comments and replies), number of users etc.
+For the language analyses we additionally use, per community, an annotated
+subset of roughly one thousand high-volume threads in which each top-level
+verdict comment carries a human-annotated \emph{certainty} score on a four-point
+ordinal scale ($4$ = blunt and assertive, e.g.\ ``NTA. That's on her.'';
+$1$ = hedged and conditional, e.g.\ ``YTA if you had the money, otherwise
+not.''). Because these threads are large and mostly contested, we assign their
+consensus level (\S\ref{subsec:method}) from the full crowd verdict rather than
+from the annotated comments alone.
+
+\subsubsection*{Cross-community setup}
+
 The two communities do not cover the same period: AITA runs across the whole
 archive, whereas AITAH only exists from 2021 onward. We therefore use two scopes
 deliberately. Descriptive and trend comparisons, which characterise each
@@ -120,14 +115,12 @@ composition rather than in kind: the communities share most topics, but AITAH
 leans towards romantic and intimate relationships, while AITA carries relatively
 more everyday disputes over housing, money, food, transport, and family
 obligation (Jensen--Shannon distance between the topic distributions $0.187$
-under BGE, $0.206$ under E5).
-
-We therefore do not claim that the two communities are topically
-interchangeable, and the design does not require it. The paired analysis of
-\S\ref{subsec:res-duplicates} holds the story itself fixed, comparing how two
-crowds judge the same text; and for the unpaired analyses we treat
-\emph{agreement} across the communities, rather than their raw difference, as
-the evidential unit (\S\ref{subsec:method}).
+under BGE, $0.206$ under E5). We therefore do not claim that the two communities
+are topically interchangeable, and the design does not require it: the paired
+analysis of \S\ref{subsec:res-duplicates} holds the story itself fixed,
+comparing how two crowds judge the same text, and for the unpaired analyses we
+treat \emph{agreement} across the communities, rather than their raw difference,
+as the evidential unit (\S\ref{subsec:method}).
 
 \begin{figure}[t]
   \centering
@@ -142,9 +135,10 @@ the evidential unit (\S\ref{subsec:method}).
   \label{fig:umap}
 \end{figure}
 
-\paragraph{Shared users.}
+\paragraph{Shared users and posts.}
 Within the same window the two crowds are far from disjoint, and they overlap
-asymmetrically in reading and in writing (Table~\ref{tab:shared-users}). About
+asymmetrically in reading and in writing (Table~\ref{tab:shared-users} in the
+appendix). About
 $1.08$M accounts are active in both communities, a Jaccard overlap of $20.3\%$
 of the combined user base; among \emph{authors} the overlap collapses to
 $39{,}010$ users ($4.3\%$). Users judge in both places, but they take their own
@@ -160,39 +154,14 @@ AITA and $20.2\%$ mainly in AITAH, and activity levels are broadly comparable
 across the two---though being heavily active in AITA does not imply being
 heavily active in AITAH. Entry is nonetheless directional: most shared users are
 first observed in AITA and first appear in AITAH about three months later,
-consistent with the younger community drawing from the older one.
+consistent with the younger community drawing from the older one. The two user
+populations otherwise behave alike, with broadly similar posting and commenting
+rates, average comment score, top-level comment rate, and daily activity
+profiles; the one salient difference is observed tenure within the window,
+$193$ days on average for AITA users against $115$ days for AITAH users.
 
-The two user populations otherwise behave alike. Posting and commenting rates,
-average comment score, top-level comment rate, and daily activity profiles are
-broadly similar. The one salient difference is observed tenure within the
-window: $193$ days on average for AITA users against $115$ days for AITAH users.
-
-\begin{table}[t]
-  \centering
-  \begin{tabular}{@{}lrr@{}}
-    \toprule
-    User cohort & Shared users & Jaccard \\
-    \midrule
-    All users                    & $1{,}081{,}782$ & $20.3\%$ \\
-    Users who posted             & $39{,}010$      & $4.3\%$  \\
-    At least 10 activities       & $194{,}843$     & $18.5\%$ \\
-    At least 100 activities      & $23{,}893$      & $16.2\%$ \\
-    Active for at least 30 days  & $459{,}720$     & $23.6\%$ \\
-    Active for at least one year & $183{,}825$     & $21.3\%$ \\
-    \bottomrule
-  \end{tabular}
-  \caption{Users shared between AITA and AITAH within the aligned window, by
-  cohort. Jaccard overlap is the shared count divided by the union of the two
-  communities' user sets for that cohort. \emph{Activities} pool a user's posts
-  and comments (??). Audience overlap is around a fifth and is stable across
-  activity and tenure thresholds, whereas authorship overlap is an order of
-  magnitude smaller.}
-  \label{tab:shared-users}
-\end{table}
-
-\paragraph{Shared posts.}
-Among the posts written by these cross-posting authors, $4{,}658$ (??\%) have a
-near-duplicate text counterpart in the other community. These duplicate
+Among the posts written by the cross-posting authors, finally, $4{,}658$ (??\%)
+have a near-duplicate text counterpart in the other community. These duplicate
 pairs---the same story judged by two different crowds---support the
 community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
 
@@ -202,25 +171,41 @@ community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
 
 \begin{table*}[t]
   \centering
-  \begin{tabular}{@{}lll@{}}
+  \begin{tabular}{@{}llp{0.46\textwidth}@{}}
     \toprule
-    Dimension & Levels & Defined by \\
+    Variable & Levels / range & Definition \\
     \midrule
-    (1) Alignment       & majority / minority        & comment verdict vs.\ dominant verdict \\
-    (2) Consensus       & consensual / contested     & YA share ($\le.2$/$\ge.8$ vs.\ $.4$--$.6$) \\
-    (3) Dissent direction & accusing / defending     & minority verdict $\times$ dominant verdict \\
-    (4) Community       & AITA / AITAH               & source subreddit \\
+    \multicolumn{3}{@{}l}{\emph{Analytical dimensions} --- how comments and posts are partitioned} \\
+    \addlinespace[2pt]
+    (1) Alignment         & majority / minority     & the comment's verdict group vs.\ the dominant verdict $D(p)$ of its post \\
+    (2) Consensus         & consensual / contested  & YA share $\rho(p)\le.2$ or $\ge.8$ vs.\ $.4\le\rho(p)\le.6$ \\
+    (3) Dissent direction & accusing / defending    & minority YA in an exculpating-dominant post vs.\ minority NA in an inculpating-dominant post \\
+    (4) Community         & AITA / AITAH            & source subreddit \\
+    \midrule
+    \multicolumn{3}{@{}l}{\emph{Outcome measures} --- computed per top-level verdict comment} \\
+    \addlinespace[2pt]
+    Score           & integer          & net score of the comment: upvotes minus downvotes \\
+    Direct replies  & count $\ge 0$    & number of comments replying directly to it \\
+    Reply depth     & count $\ge 0$    & nested reply levels beneath it ($0$ = no reply, $1$ = direct replies only, $2$ = a reply itself drew a reply), by recursive traversal of its reply subtree \\
+    Thread score    & integer          & summed net score over the comment and its entire reply subtree \\
+    Certainty       & $1$--$4$ ordinal & annotated assertiveness ($4$ = blunt and assertive, $1$ = hedged and conditional); annotated subset only \\
     \bottomrule
   \end{tabular}
-  \caption{The four analytical dimensions.}
+  \caption{The four analytical dimensions and the outcome measures. The first
+  three dimensions partition \emph{comments} given the crowd verdict on their
+  post; the fourth is the \emph{community}, used as a replication axis. Score,
+  direct replies, and certainty are read off the comment itself; reply depth and
+  thread score summarise the discussion it seeds and are computed on a uniform
+  random sample of posts.}
   \label{tab:dimensions}
 \end{table*}
 
 
-Our analyses cross-cut the data along four binary dimensions
-(Table~\ref{tab:dimensions}). The first three partition \emph{comments}, given
-the crowd verdict on their post; the fourth is the \emph{community} itself, used
-as a replication axis.
+Our analyses cross-cut the data along four binary dimensions and read a small
+set of outcomes off each comment; Table~\ref{tab:dimensions} summarises both.
+The first three dimensions partition \emph{comments}, given the crowd verdict on
+their post; the fourth is the \emph{community} itself, used as a replication
+axis.
 
 \subsubsection*{(1) Majority vs.\ Minority --- alignment with the crowd}
 A top-level verdict comment is \textbf{majority} if its verdict group matches the
@@ -254,19 +239,13 @@ across them as evidence of a structural, rather than community-specific, effect.
 ?? blahblah
 
 \paragraph{Measures.}
-For a top-level verdict comment we compute:
-\begin{description}
-  \item[Score] its net score, i.e.\ upvotes minus downvotes.
-  \item[Direct replies] the number of comments that reply directly to it.
-  \item[Reply depth] the number of nested reply levels beneath it
-        ($0$ = no reply, $1$ = direct replies only, $2$ = a reply itself drew a
-        reply, and so on), obtained by recursively traversing its reply subtree.
-  \item[Thread score] the sum of net scores over the comment and its entire
-        reply subtree---the total attention of the discussion it seeds.
-  \item[Certainty] the annotated one-to-four assertiveness score (annotated
-        subset only).
-\end{description}
-Because traversing the full reply forest is prohibitively expensive, the
-depth- and thread-score measures are computed on a uniform random sample of
-posts (the sample size is reported with each result); all other measures use the
-full filtered data.
+The lower half of Table~\ref{tab:dimensions} lists the outcomes we compute for
+each top-level verdict comment. They separate two things that are easily
+conflated: \emph{approval}, carried by the comment's own score, and
+\emph{attention}, carried by direct replies and reply depth. Thread score sits
+between them, aggregating the votes cast on the whole discussion a comment
+seeds---so a comment can be scored down while the subtree rooted in it
+accumulates a positive total. Because traversing the full reply forest is
+prohibitively expensive, the depth- and thread-score measures are computed on a
+uniform random sample of posts (the sample size is reported with each result);
+all other measures use the full filtered data.
