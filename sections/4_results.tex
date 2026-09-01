@@ -3,11 +3,75 @@
 
 
 \subsection{RQ1: Minority judgments are treated differently under consensus}
+\textbf{[TODO]}
+\begin{itemize}
+    \item Check whether RQ1 matches these four main results. Get the code and go through the experiments and figures again.
+    \item Ziyu's results on certainty don't fit into RQ1.
+    \item Refine the wording. Try to use ``consensus'' more and avoid using ``controversial''.
+    \item Should we make the RQ1 section shorter? Combine these four results?
+\end{itemize}
 
-general comparison of majority/minority x consensual/contested
-comment score, reply prob/count, engagement
+% general comparison of majority/minority x consensual/contested
+% comment score, reply prob/count, engagement
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]
+    {figures/engagement_by_consensus.png}
+    \caption{\textbf{Minority judgments receive lower scores but greater engagement under consensus.}
+    Comparison of comment scores and reply engagement between majority- and
+    minority-side judgments across consensus levels in AITA and AITAH.
+    Both matched post copies satisfy $\mathrm{YANA\_total} \geq 20$.}
+    \label{fig:engagement-by-consensus}
+\end{figure}
+
+\textbf{Minority judgments received lower scores.} As shown in Figure~\ref{fig:engagement-by-consensus}, in AITA, the mean score was $37.95$ for majority comments and $-2.75$ for minority comments; in AITAH, the corresponding means were $14.30$ and $-0.19$. This score gap became considerably smaller in controversial posts. 
+
+\textbf{Minority judgments attracted more direct replies.} As shown in Figure~\ref{fig:engagement-by-consensus}, in non-controversial posts, minority comments received an average of $0.53$ direct replies in AITA, compared with $0.14$ for majority comments. A similar pattern appeared in AITAH, where minority and majority comments received $0.38$ and $0.12$ replies, respectively. Under controversy, however, this engagement advantage diminished: the corresponding means were $0.30$ versus $0.26$ in AITA and both were $0.21$ in AITAH. Thus, minority judgments generated greater discussion primarily when they challenged an otherwise strong group consensus.
+\begin{figure}[t]
+    \centering
+
+    \includegraphics[width=\columnwidth]
+    {figures/reply_depth_AITA.png}
+
+    \vspace{0.5em}
+
+    \includegraphics[width=\columnwidth]
+    {figures/reply_depth_AITAH.png}
+
+    \caption{\textbf{Minority judgments generate deeper reply threads.}
+    Mean reply depth and the proportion of threads reaching a depth of at least two in AITA (top) and AITAH (bottom). Results compare majority- and minority-side comments across non-controversial and controversial posts with $\mathrm{YANA\_total} \geq 200$. INFO comments and exact 50/50 verdict ties are excluded. The majority--minority difference is largest in non-controversial posts and narrows substantially under controversy.}
+
+    \label{fig:reply-depth-comparison}
+\end{figure}
 
 
+\textbf{Minority judgments generated deeper reply threads.}
+As shown in Figure~\ref{fig:reply-depth-comparison}, in non-controversial AITA posts, minority comments had a mean reply depth of $0.82$, compared with $0.13$ for majority comments; $15.7\%$ of minority threads reached a depth of at least two, compared with $2.5\%$ of majority threads. A similar pattern appeared in AITAH: minority and majority comments had mean reply depths of $6.50$ and $0.12$, respectively, while $12.1\%$ and $2.0\%$ reached a depth of at least two. These differences narrowed substantially in controversial posts. Overall, minority judgments stimulated deeper discussion mainly when they challenged an otherwise strong group consensus.
+
+\begin{figure}[t]
+    \centering
+
+    \includegraphics[width=\columnwidth]
+    {figures/comment_engagement_aita.png}
+
+    \vspace{0.5em}
+
+    \includegraphics[width=\columnwidth]
+    {figures/comment_engagement_aitah.png}
+
+    \caption{\textbf{Comment engagement is concentrated in the earliest hours after submission.}
+    Comment scores and direct replies by arrival hour for majority, minority,
+    and controversial-post comments in AITA (top) and AITAH (bottom).
+    Lines show hourly means and medians, while shaded regions show the
+    interquartile and 10th--90th percentile ranges. Analyses are restricted to
+    the first 18 hours and posts with $\mathrm{YANA\_total} \geq 200$; INFO
+    comments are excluded.}
+
+    \label{fig:comment-engagement-over-time}
+\end{figure}
+
+\textbf{Comment engagement was highest for early comments and quickly decreased over time.} As shown in Figure~\ref{fig:comment-engagement-over-time}, in both AITA and AITAH, comments posted during the first hour received the highest scores and the greatest number of direct replies. Under strong consensus, minority comments generally received lower scores than majority comments but attracted more replies, particularly during the earliest hours. This minority engagement advantage weakened quickly as comments arrived later. The large differences between mean and median values further indicate that early engagement was highly skewed and driven partly by a small number of exceptionally visible comments.
 
 \subsection{RQ2: Minority in consensus - gets lowers scores, more replies/depth/engagement}
 
@@ -142,3 +206,9 @@ Of the 103 pairs meeting the $\mathrm{YANA\_total} \geq 20$ threshold, one was e
 community behaviour difference. e.g. minority group is punished more in AITA
 
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/score_distribution_yana_ge20.png}
+    \caption{Post-weighted distributions of median majority- and minority-comment scores in matched AITA and AITAH posts with $\mathrm{YANA\_total} \geq 20$ in both copies.}
+    \label{fig:score-distribution-yana-ge20}
+\end{figure}
