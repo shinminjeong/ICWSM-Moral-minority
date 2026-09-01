@@ -8,9 +8,9 @@ verdict tags (Table~\ref{tab:tags}). Six of them assign blame and enter the
 analysis; \emph{INFO} alone declines to judge and is discarded. \emph{YWBTA}
 and \emph{YWNBTA} are the hypothetical forms, used when the OP asks about an
 action not yet taken rather than one already taken; because they point the
-blame in the same direction as \emph{YTA} and \emph{NTA}, we fold them into
-those tags, leaving the four that make up the exculpating group $\mathrm{NA}$
-and the inculpating group $\mathrm{YA}$ (\S\ref{subsec:dataset}).
+blame in the same direction as \emph{NTA} and \emph{YTA}, they join those tags
+in the exculpating group $\mathrm{NA}$ and the inculpating group $\mathrm{YA}$
+respectively (\S\ref{subsec:dataset}).
 
 The vocabularies are otherwise identical, with one difference in surface form:
 AITAH additionally accepts H-suffixed aliases of the four OP-directed tags
@@ -36,10 +36,10 @@ their unsuffixed counterparts before any analysis. \emph{NAH}, \emph{ESH}, and
     \bottomrule
   \end{tabular}
   \caption{The verdict tags shared by AITA and AITAH. Six assign blame and are
-  collapsed into the exculpating group $\mathrm{NA}$ and the inculpating group
-  $\mathrm{YA}$, with the hypothetical forms \emph{YWNBTA} and \emph{YWBTA}
-  folded into \emph{NTA} and \emph{YTA}; \emph{INFO} states no judgment and is
-  discarded. AITAH also accepts H-suffixed
+  grouped into the exculpating group
+  $\mathrm{NA}=\{\text{NTA},\text{YWNBTA},\text{NAH}\}$ and the inculpating
+  group $\mathrm{YA}=\{\text{YTA},\text{YWBTA},\text{ESH}\}$; \emph{INFO}
+  states no judgment and is discarded. AITAH also accepts H-suffixed
   aliases of the four OP-directed tags (\emph{NTAH}, \emph{YTAH},
   \emph{YWNBTAH}, \emph{YWBTAH}), normalised to the forms shown here.}
   \label{tab:tags}
@@ -73,7 +73,7 @@ authors is an order of magnitude smaller.
   \caption{Users shared between AITA and AITAH within the aligned window, by
   cohort. Jaccard overlap is the shared count divided by the union of the two
   communities' user sets for that cohort. \emph{Activities} pool a user's posts
-  and comments (??). Audience overlap is around a fifth and is stable across
+  and comments \textbf{[TODO: confirm this definition]}. Audience overlap is around a fifth and is stable across
   activity and tenure thresholds, whereas authorship overlap is an order of
   magnitude smaller.}
   \label{tab:shared-users}
