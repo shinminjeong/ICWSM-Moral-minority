@@ -1,8 +1,6 @@
 \section{Data and Methods}
 \label{sec:data-method}
 
-\subsection{The r/AmItheAsshole and r/AITAH dataset}
-\label{subsec:dataset}
 
 We study two moral-judgment communities on Reddit,
 \emph{r/AmItheAsshole} (AITA) and \emph{r/AITAH} (AITAH). 
@@ -22,7 +20,9 @@ convention:
 \emph{ESH} (Everyone Sucks Here), and
 \emph{INFO} (more information needed).
 
-\subsubsection*{The two communities}
+
+\subsection{The r/AmItheAsshole and r/AITAH dataset}
+\label{subsec:dataset}
 
 The two communities share this convention and cover much of the same
 interpersonal territory, but differ in age and in how far they formalize the
@@ -41,7 +41,7 @@ weekly visitors and $60$K weekly contributions.\footnote{Reddit exposes
 different summary statistics for the two communities, so these figures are
 indicative of scale rather than directly comparable.}
 
-\paragraph{Verdicts and the crowd judgment.}
+\subsubsection{Verdicts and the crowd judgment.}
 Following community usage, we collapse the four scored tags into two moral
 stances toward the OP: an \textbf{exculpating} group $\mathrm{NA}=\{\text{NTA},
 \text{NAH}\}$ and an \textbf{inculpating} group $\mathrm{YA}=\{\text{YTA},
@@ -59,7 +59,7 @@ more than $200$ top-level verdicts. This restriction is relaxed only for the
 paired analysis of \S\ref{subsec:res-duplicates}, where duplicate posts rarely
 reach that count.
 
-\paragraph{Collection and scale.}
+\subsubsection{Collection and scale.}
 We work from the complete public archive of submissions and comments for both
 communities over 2018--2025 (?? source), rather than from a sample. From it we
 retain top-level verdict comments and attach to each its parent post's crowd
@@ -75,7 +75,7 @@ not.''). Because these threads are large and mostly contested, we assign their
 consensus level (\S\ref{subsec:method}) from the full crowd verdict rather than
 from the annotated comments alone.
 
-\subsubsection*{Cross-community setup}
+\subsection*{Cross-community setup}
 
 The two communities do not cover the same period: AITA runs across the whole
 archive, whereas AITAH only exists from 2021 onward. We therefore use two scopes
@@ -84,17 +84,13 @@ community on its own terms, use each community's \emph{full} archive, so that
 within-community patterns are estimated from all available data. Every analysis
 that compares the communities directly---the content, user, and duplicate-post
 comparisons below---is instead computed on a single aligned window running from
-17 March 2021 to 23 December 2025,
-\[
-  \text{2021-03-17 00:00:00} \;\le\; \texttt{created\_utc} \;<\;
-  \text{2025-12-24 00:00:00},
-\]
+17 March 2021 to 23 December 2025, 
 the interval over which both communities are simultaneously present in the
 archive. Fixing this window means that an AITA/AITAH difference cannot be an
 artefact of AITA's longer history or of period effects, while the unpaired trend
 analyses lose no data to an alignment they do not need.
 
-\paragraph{Post content.}
+\subsubsection{Post content.}
 Do the two communities discuss the same things? Substantially, but not
 identically---and the qualification matters for how far the community contrast
 can be read as institutional. We convert post texts into $768$-dimensional
@@ -135,7 +131,7 @@ as the evidential unit (\S\ref{subsec:method}).
   \label{fig:umap}
 \end{figure}
 
-\paragraph{Shared users and posts.}
+\subsubsection{Shared users and posts.}
 Within the same window the two crowds are far from disjoint, and they overlap
 asymmetrically in reading and in writing (Table~\ref{tab:shared-users} in the
 appendix). About
@@ -164,6 +160,8 @@ Among the posts written by the cross-posting authors, finally, $4{,}658$ (??\%)
 have a near-duplicate text counterpart in the other community. These duplicate
 pairs---the same story judged by two different crowds---support the
 community-level natural experiment analysed in \S\ref{subsec:res-duplicates}.
+
+
 
 \subsection{Method: four analytical dimensions}
 \label{subsec:method}
