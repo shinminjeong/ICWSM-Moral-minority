@@ -216,25 +216,44 @@ We bin posts by how lopsided the crowd verdict is. \textbf{Consensual} posts hav
 $\rho(p)\le 0.20$ or $\rho(p)\ge 0.80$, so that one side holds at least a
 four-to-one advantage; \textbf{contested} posts have $0.40\le\rho(p)\le 0.60$, a
 near tie. Posts between these bands are excluded, leaving the two cohorts
-cleanly separated. The majority/minority split is only sharply meaningful under
-consensus; the contested cohort serves as a control in which the two sides are
-near-symmetric.
+cleanly separated. Every analysis that follows reads the consensual cohort
+against the contested one.
 
 \subsubsection*{(3) Accusing vs.\ Defending --- the direction of dissent}
 Within the minority, dissent points in one of two opposite moral directions
 relative to the crowd. \textbf{Accusing} dissent is a YA judgment in an
 exculpating-dominant post: the dissenter blames an OP the crowd exonerated.
 \textbf{Defending} dissent is an NA judgment in an inculpating-dominant post:
-the dissenter exonerates an OP the crowd blamed. The matching majority in each
-post type provides a same-context baseline, so any accuse/defend difference is a
-property of the dissent itself, not of the post.
+the dissenter exonerates an OP the crowd blamed. Each direction is read against
+the matching majority in the same post type, which holds the post context fixed
+on both sides of the comparison.
 
 \subsubsection*{(4) AITA vs.\ AITAH --- community as a replication axis}
 We run every analysis independently on the two communities and treat agreement
 across them as evidence of a structural, rather than community-specific, effect.
 
 \paragraph{The 18-hour rule.}
-?? blahblah
+Dimension (4) is more than a replication axis, because the two communities
+differ in one specific institutional respect. AITA assigns each post an official
+verdict flair approximately $18$ hours after submission; from that point on, a
+user arriving at the post sees the crowd's judgment stated as settled before
+reading a single comment. AITAH never does this. The rule therefore imposes a
+threshold \emph{within} a post's life: verdicts written before the mark address
+an open question, verdicts written after it address a closed one. If
+formalizing a consensus is what silences dissent, the minority should thin out
+or soften just after the flair appears.
+
+We test this by locating each top-level verdict comment in time relative to its
+own post and asking whether the minority share and the expressed certainty of
+minority comments shift discontinuously at the threshold (??\,estimator). AITAH
+supplies the placebo: the same time index exists there, but nothing happens at
+$18$ hours, so any change common to both communities reflects the ordinary
+ageing of a discussion rather than the rule. We read the result as a bound on
+the institution's effect rather than as an identified causal estimate. The flair
+is not the only thing that changes as a thread ages---its audience turns over,
+early comments accumulate votes that later ones cannot, and the remaining
+dissenters are a progressively more selected group---and our design cannot
+separate the announcement from that drift.
 
 \paragraph{Measures.}
 The lower half of Table~\ref{tab:dimensions} lists the outcomes we compute for
@@ -242,8 +261,8 @@ each top-level verdict comment. They separate two things that are easily
 conflated: \emph{approval}, carried by the comment's own score, and
 \emph{attention}, carried by direct replies and reply depth. Thread score sits
 between them, aggregating the votes cast on the whole discussion a comment
-seeds---so a comment can be scored down while the subtree rooted in it
-accumulates a positive total. Because traversing the full reply forest is
+seeds, so that the reception of a judgment can be told apart from the reception
+of the exchange it starts. Because traversing the full reply forest is
 prohibitively expensive, the depth- and thread-score measures are computed on a
 uniform random sample of posts (the sample size is reported with each result);
 all other measures use the full filtered data.
