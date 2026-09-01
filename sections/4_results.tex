@@ -18,64 +18,78 @@ from here: we focus on minority in consensual posts only
 \subsection{RQ3: The direction of dissent --- accusing versus defending}
 \label{subsec:res-direction}
 
-Late Certainty -- dominated by the 'defend' stance
+Figure~\ref{fig:dissent-direction} compares accusing and defending dissent
+(\S\ref{subsec:method}) in $1{,}500$ sampled consensual high-volume posts from
+each community. Each condition is shown against the majority comments of the
+same post type, which are not themselves classified by direction.
 
-Within the minority of a consensual post, dissent points in one of two moral
-directions. \textbf{Accusing} dissent blames an OP the crowd has absolved;
-\textbf{defending} dissent absolves an OP the crowd has blamed. The two are
-treated differently on every measure we compute, and in the same direction in
-both communities (Figure~\ref{fig:direction}).
+\textbf{[TODO: report the number of minority and majority comments per
+condition]}
 
-\textbf{[TODO: report the number of accusing and defending minority comments
-per community, and whether the reported scores are means or medians]}
+\paragraph{Voting disfavors the minority in both directions.}
+Across both communities, minority comments received markedly lower scores than
+the majority comments of the same post type. In AITA, accusing minority
+comments had a mean score of $-3.2$ against $37.2$ for majority comments in
+NA-dominant posts, and defending minority comments $-2.4$ against $35.4$ in
+YA-dominant posts. AITAH shows the same ordering on a compressed scale:
+accusing minority comments averaged $-0.6$ against $14.7$, and defending
+minority comments $1.1$ against $11.2$. The one condition in which dissent
+attracts net approval---defending dissent in AITAH---still falls an order of
+magnitude below the majority it is measured against, so the gap is a matter of
+degree rather than of sign.
 
-\paragraph{Accusing is penalized more heavily.}
-In AITA the average accusing comment scores $-3.2$, against $-2.4$ for
-defending. In AITAH, where scores run higher throughout, the gap is wider and
-straddles zero: accusing averages $-0.6$ while defending averages $+1.1$. The
-ordering is the same in both communities, but AITAH separates the two
-directions qualitatively rather than only in degree---a dissenter who defends a
-condemned OP ends up with net approval, while one who accuses an absolved OP
-does not.
+\paragraph{Replies move in the opposite direction.}
+In AITA, $29.3\%$ of accusing and $17.2\%$ of defending minority comments drew
+more than one reply, against only $4.6\%$ and $4.1\%$ of their respective
+majority baselines. AITAH repeats the asymmetry: $22.7\%$ and $12.8\%$ for
+minority comments against $4.1\%$ for both majority baselines. The baselines
+are the informative part here. Majority comments are answered at an almost
+constant low rate---between $4.1\%$ and $4.6\%$ regardless of post type or
+community---while the minority rate varies by a factor of three across the same
+cells. Whatever governs how much reply a comment attracts operates almost
+entirely on dissent.
 
-\paragraph{Accusing generates more discussion.}
-The engagement measures reverse the sign of the disadvantage. In AITA,
-$29.3\%$ of accusing comments draw more than one reply, against $17.2\%$ of
-defending comments, and $17.8\%$ seed a subtree deeper than two levels, against
-$9.5\%$. AITAH reproduces the pattern at uniformly lower levels: $22.7\%$
-versus $12.8\%$ for replies, and $13.2\%$ versus $7.2\%$ for depth. The ratios
-are strikingly stable across both communities and both measures: accusing
-dissent draws between $1.7$ and $1.9$ times as much discussion as defending
-dissent, even as the absolute rates differ by a third between communities.
+\paragraph{Accusing draws more discussion than defending.}
+Within the minority, the accusing direction is consistently the more engaged
+one. It exceeds defending dissent by a factor of $1.70$ in AITA and $1.77$ in
+AITAH on the reply measure, and by $1.87$ and $1.83$ on reply depth, where
+$17.8\%$ of accusing against $9.5\%$ of defending comments in AITA, and
+$13.2\%$ against $7.2\%$ in AITAH, seed subtrees deeper than two levels. The
+absolute rates differ by roughly a third between the two communities, yet every
+one of these ratios falls between $1.7$ and $1.9$.
 
-Sanction and attention therefore do not track a single underlying severity. If
-the crowd simply responded more strongly to more objectionable dissent, the two
-would move together; instead the direction that is voted down hardest is also
-the direction that is answered most. Accusations against a lenient consensus
-provoke confrontation, whereas defenses of a condemned OP are more often left
-alone.
+Taken together, these descriptive patterns separate approval from
+conversational attention. Minority judgments were strongly disfavored in voting
+relative to majority judgments, yet were disproportionately likely to initiate
+further discussion, and the contrast is sharpest for accusing dissent. Sanction
+and attention therefore do not track a single underlying severity: the direction
+that is voted down hardest is also the direction that is answered most.
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\columnwidth]{figures/direction.png}
-  \caption{Accusing versus defending dissent in consensual posts, by community.
-  Accusing minority comments score lower than defending ones in both AITA and
-  AITAH, yet are $1.7$--$1.9$ times more likely to draw multiple replies and to
-  seed reply subtrees deeper than two levels.
-  \textbf{[TODO: confirm the figure file name and panel layout]}}
-  \label{fig:direction}
+  \caption{Accusing versus defending dissent in $1{,}500$ sampled consensual
+  high-volume posts per community, with majority comments from the same post
+  type as baselines. Minority comments score far below the majority in every
+  condition, yet are three to five times more likely to draw more than one
+  reply; accusing dissent exceeds defending dissent on both engagement measures
+  in both communities.
+  \textbf{[TODO: report median or distribution instead of mean, add p values]}}
+  \label{fig:dissent-direction}
 \end{figure}
 
 
 
 \subsection{RQ4: AITA/AITAH + timeline}
 \paragraph{Certainty change over time
-18h rule}
+18h rule.}
 Figure~\ref{fig:certainty-time-series} shows the mean certainty expressed by majority- and minority-side comments during the first 25 hours after submission.
 Majority-side comments consistently express greater certainty than minority-side comments in both communities. After the 18-hour threshold, minority certainty increases in AITA but decreases temporarily in AITAH.
 
 \paragraph{Minority verdict
-ratio over time}
+ratio over time.}
+Minority participation develops differently depending on whether the minority accuses or defends the OP. In both communities, accusing minorities in NA-dominant posts remain relatively stable or gradually increase over time. By contrast, defending minorities in YA-dominant posts follow different trajectories: their cumulative share rises slightly in AITA but declines sharply in AITAH, from approximately 11\% to 7\%. Thus, the strongest temporal change occurs among commenters who defend an OP condemned by the majority, particularly in AITAH.
+
 
 
 Certainty / share changes over time
@@ -95,7 +109,36 @@ Certainty / share changes over time
     \label{fig:certainty-time-series}
 \end{figure}
 
+
+\begin{figure}[t]
+    \centering
+\includegraphics[width=\columnwidth]
+    {figures/aita_minority_verdict_ratio.png}
+
+    \vspace{0.5em}
+
+    \includegraphics[width=\columnwidth]
+    {figures/aitah_minority_verdict_ratio.png}
+
+    \caption{\textbf{Defending and accusing minorities follow different
+    temporal patterns.} Cumulative minority-verdict share during the first
+    24 hours in AITA (top) and AITAH (bottom), restricted to posts receiving
+    at least 200 verdicts. Minority commenters are YTA/ESH in NA-dominant
+    posts and NTA/NAH in YA-dominant posts. INFO verdicts are excluded.
+    Minority participation remains comparatively stable in AITA, whereas
+    the share of defending minorities in YA-dominant AITAH posts declines
+    over time.}
+    \label{fig:minority-verdict-ratio}
+\end{figure}
 \subsection{RQ4: AITA/AITAH + shared post in different communities}
 \label{subsec:res-duplicates}
 
+Majority comments receive significantly lower median scores in AITAH than in AITA, based on 102 complete pairs.
+Minority comments receive significantly higher—or less negative—median scores in AITAH than in AITA, based on 77 complete pairs.
+Thus, the score separation between majority and minority comments is substantially larger in AITA.
+
+Of the 103 pairs meeting the $\mathrm{YANA\_total} \geq 20$ threshold, one was excluded because an AITAH post had an exact 50/50 verdict tie, making its majority status undefined. Minority comments receive significantly higher---or less negative---median scores in AITAH than in AITA, based on 77 complete pairs. The remaining 26 pairs were excluded because at least one copy contained no minority comments, so a minority-comment median could not be calculated. Thus, among posts for which each comparison was observable, the score separation between majority and minority comments was substantially larger in AITA.
+
 community behaviour difference. e.g. minority group is punished more in AITA
+
+

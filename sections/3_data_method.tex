@@ -42,7 +42,7 @@ we define the \emph{YA share}
 The dominant verdict is $D(p)=\mathrm{YA}$ when $\rho(p)\ge0.5$ and
 $D(p)=\mathrm{NA}$ when $\rho(p)<0.5$.
 Unless otherwise noted, analyses are restricted to \emph{high-volume} posts
-with more than $200$ retained top-level verdict comments. We relax this
+with at least $200$ retained top-level verdict comments. We relax this
 threshold for the paired duplicate-post analysis in
 \S\ref{subsec:res-duplicates}, because matched posts rarely reach it in both
 communities.
@@ -91,7 +91,7 @@ a topic model and quantify differences between the estimated topic
 distributions using Jensen-Shannon distance
 \textbf{[TODO: specify the topic model and the number of topics]}. These procedures
 assess content comparability without assuming that the communities are
-topically interchangeable.
+topically interchangeable. Appendix~\ref{sec:appendix-content} reports the outcome.
 
 \subsubsection{Shared users.}
 Within the aligned window, we identify accounts active in both communities and,
@@ -105,6 +105,16 @@ For each shared user, we compute the share of activity occurring in AITAH, the
 community in which the user is first observed, the interval between first
 appearances in the two communities, posting and commenting rates, mean comment
 score, top-level comment rate, daily activity profile, and observed tenure.
+
+\subsubsection{Comment timing.}
+The two communities also accumulate comments on a similar schedule, which
+matters for the threshold analysis in \S\ref{subsec:method}. The median post
+reaches half of its top-level comments within $7.3$ hours in AITA and $6.7$
+hours in AITAH, and $90\%$ of them within $17.7$ and $20.1$ hours. AITA's
+verdict flair therefore appears at roughly the point at which a typical post
+has already collected most of the top-level comments it will ever receive,
+which bounds how much of the data the flair can plausibly affect.
+Appendix~\ref{sec:appendix-timing} reports the full distributions.
 
 \subsubsection{Duplicate posts.}
 We identify cross-community duplicates by exact text matching rather than
