@@ -1,6 +1,8 @@
 \section{Data and Methods}
 \label{sec:data-method}
 
+\input{components/tab_dimensions}
+
 \subsection{The r/AmItheAsshole and r/AITAH datasets}
 \label{subsec:dataset}
 
@@ -131,37 +133,14 @@ for both submissions. This design holds the submitted text fixed when comparing
 crowd judgments across communities. As noted above, the $200$-verdict threshold
 is not applied to this analysis.
 
+
+
 \subsection{Analytical dimensions and outcome measures}
 \label{subsec:method}
 
 Table~\ref{tab:dimensions} summarizes the four analytical dimensions and the
 comment-level outcome measures.
 
-\begin{table*}[t]
-  \centering
-  \begin{tabular}{@{}llp{0.56\textwidth}@{}}
-    \toprule
-    Variable & Levels / range & Definition \\
-    \midrule
-    \multicolumn{3}{@{}l}{\emph{Analytical dimensions}} \\
-    \addlinespace[2pt]
-    (1) Alignment & majority / minority & the comment's verdict group compared with the dominant verdict $D(p)$ of its post \\
-    (2) Consensus & consensual / contested & $\rho(p)\le 0.20$ or $\rho(p)\ge 0.80$ compared with $0.40\le\rho(p)\le 0.60$ \\
-    (3) Dissent direction & accusing / defending & minority YA in an exculpating-dominant post compared with minority NA in an inculpating-dominant post \\
-    (4) Community & AITA / AITAH & source subreddit \\
-    \midrule
-    \multicolumn{3}{@{}l}{\emph{Outcome measures}} \\
-    \addlinespace[2pt]
-    Score & integer & net score of the verdict comment: upvotes minus downvotes \\
-    Direct replies & count $\ge 0$ & number of comments replying directly to the verdict comment \\
-    Reply depth & count $\ge 0$ & maximum number of nested reply levels beneath the verdict comment, computed recursively \\
-    Thread score & integer & sum of net scores over the verdict comment and its complete reply subtree \\
-    Certainty & ordinal, $1$ to $4$ & annotated assertiveness, available only for the annotated subset \\
-    \bottomrule
-  \end{tabular}
-  \caption{Definitions of the analytical dimensions and outcome measures.}
-  \label{tab:dimensions}
-\end{table*}
 
 \subsubsection*{(1) Majority versus minority: alignment with the crowd}
 A top-level verdict comment is classified as \textbf{majority} when its verdict
