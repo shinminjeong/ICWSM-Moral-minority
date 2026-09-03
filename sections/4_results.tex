@@ -166,8 +166,21 @@ that is voted down hardest is also the direction that is answered most.
 
 \subsection{RQ4: AITA/AITAH timeline }
 \paragraph{Certainty change over time 18h rule.}
-Figure~\ref{fig:certainty-time-series} shows the mean certainty expressed by majority- and minority-side comments during the first 25 hours after submission.
-Majority-side comments consistently express greater certainty than minority-side comments in both communities. After the 18-hour threshold, minority certainty increases in AITA but decreases temporarily in AITAH.
+Figure~\ref{fig:certainty-time-series} shows the mean certainty expressed by
+majority- and minority-side comments during the first 25 hours after
+submission. Majority-side comments express greater certainty than
+minority-side comments throughout, in both communities.
+
+The two communities differ in how minority certainty moves across the window.
+In AITA it increases steadily ($p\approx2\times10^{-9}$); in AITAH it is
+essentially flat ($p=.59$). The increase is a trend rather than a step:
+estimating a post-threshold indicator alongside the time trend leaves no
+discontinuity at the $18$-hour verdict flair
+\textbf{[TODO: report the threshold-term statistic]}. Whatever makes late
+dissent in AITA more assertive therefore accumulates over the course of a
+discussion instead of switching on when the verdict is posted, which points to
+a gradual shift in the conversational environment---and in which dissenters are
+still speaking---rather than to an immediate effect of the announcement.
 \textbf{[TODO: relabel YA/NA in AITAH]}
 
 \paragraph{Minority verdict ratio over time.}
@@ -181,14 +194,15 @@ Certainty / share changes over time
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth]{figures/time_series_certainty.png}
-    \caption{\textbf{Majority voices remain more certain, but the flair-lock
-    threshold changes minority certainty only in AITA.}
+    \caption{\textbf{Majority voices remain more certain, and minority
+    certainty rises over time in AITA only.}
     Mean certainty of majority- and minority-side comments during the first
     25 hours after submission. The vertical dashed line marks AITA's
     approximately 18-hour AutoModerator verdict-flair lock; it is shown for
-    AITAH only as a reference threshold. AITA exhibits a significant increase
-    in certainty after this threshold ($p \approx 2 \times 10^{-9}$), whereas
-    AITAH does not ($p=.59$).}
+    AITAH only as a placebo cut-off, since nothing occurs there at that time.
+    Minority certainty increases across the window in AITA
+    ($p \approx 2 \times 10^{-9}$) but not in AITAH ($p=.59$); neither
+    community shows a discontinuity at the threshold itself.}
     \label{fig:certainty-time-series}
 \end{figure}
 

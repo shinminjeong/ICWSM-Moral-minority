@@ -182,9 +182,11 @@ defined above.
 AITA's official verdict flair introduces a threshold within each post's life
 that has no counterpart in AITAH. For every top-level verdict comment, we
 compute elapsed time since submission and estimate whether the minority share
-and the certainty of minority comments change discontinuously at $18$ hours
-\textbf{[TODO: specify the discontinuity estimator, its bandwidth, and the time
-binning]}. We apply the same threshold in AITAH as a placebo comparison
+and the certainty of minority comments change discontinuously at $18$ hours,
+fitting a time trend together with an indicator for the post-threshold period
+so that a jump at the boundary is separated from the gradual drift across the
+window \textbf{[TODO: specify the functional form of the trend, the estimation
+window, and the time binning]}. We apply the same threshold in AITAH as a placebo comparison
 for changes associated with the ordinary aging of a discussion.
 
 This analysis is observational. Thread age may coincide with audience turnover,
