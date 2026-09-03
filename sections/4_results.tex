@@ -23,7 +23,7 @@
     \caption{\textbf{Minority judgments receive lower scores but greater engagement under consensus.}
     Comparison of comment scores and reply engagement between majority- and
     minority-side judgments across consensus levels in AITA and AITAH.
-    Both matched post copies satisfy $\mathrm{YANA\_total} \geq 20$.}
+    Both matched post copies satisfy $\mathrm{YANA\_total} \geq 200$.}
     \label{fig:engagement-by-consensus}
 \end{figure}
 
@@ -73,7 +73,9 @@ As shown in Figure~\ref{fig:reply-depth-comparison}, in non-controversial AITA p
     \label{fig:comment-engagement-over-time}
 \end{figure}
 
-\textbf{Comment engagement was highest for early comments and quickly decreased over time.} As shown in Figure~\ref{fig:comment-engagement-over-time}, in both AITA and AITAH, comments posted during the first hour received the highest scores and the greatest number of direct replies. Under strong consensus, minority comments generally received lower scores than majority comments but attracted more replies, particularly during the earliest hours. This minority engagement advantage weakened quickly as comments arrived later. The large differences between mean and median values further indicate that early engagement was highly skewed and driven partly by a small number of exceptionally visible comments.
+\textbf{Early minority comments receive lower scores but more replies.} As shown in Figure~\ref{fig:comment-engagement-over-time}, in both AITA and AITAH, comments posted during the first hour received the highest scores and the greatest number of direct replies. Under strong consensus, minority comments generally received lower scores than majority comments but attracted more replies, particularly during the earliest hours. This minority engagement advantage weakened quickly as comments arrived later. The large differences between mean and median values further indicate that early engagement was highly skewed and driven partly by a small number of exceptionally visible comments.
+\textbf{[TODO: focus on how minority comment engagement over time]}
+
 
 \textbf{Minority judgments are expressed with less certainty than majority judgments.} As shown in Figure~\ref{fig:majority-minority-certainty}, minority judgments are expressed with lower certainty in both communities.
 
@@ -162,15 +164,14 @@ that is voted down hardest is also the direction that is answered most.
 
 
 
-\subsection{RQ4: AITA/AITAH + timeline}
-\paragraph{Certainty change over time
-18h rule.}
+\subsection{RQ4: AITA/AITAH timeline }
+\paragraph{Certainty change over time 18h rule.}
 Figure~\ref{fig:certainty-time-series} shows the mean certainty expressed by majority- and minority-side comments during the first 25 hours after submission.
 Majority-side comments consistently express greater certainty than minority-side comments in both communities. After the 18-hour threshold, minority certainty increases in AITA but decreases temporarily in AITAH.
+\textbf{[TODO: relabel YA/NA in AITAH]}
 
-\paragraph{Minority verdict
-ratio over time.}
-Minority participation develops differently depending on whether the minority accuses or defends the OP. In both communities, accusing minorities in NA-dominant posts remain relatively stable or gradually increase over time. By contrast, defending minorities in YA-dominant posts follow different trajectories: their cumulative share rises slightly in AITA but declines sharply in AITAH, from approximately 11\% to 7\%. Thus, the strongest temporal change occurs among commenters who defend an OP condemned by the majority, particularly in AITAH.
+\paragraph{Minority verdict ratio over time.}
+Figure~\ref{fig:minority-verdict-ratio} shows minority participation develops differently depending on whether the minority accuses or defends the OP. In both communities, accusing minorities in NA-dominant posts remain relatively stable or gradually increase over time. By contrast, defending minorities in YA-dominant posts follow different trajectories: their cumulative share rises slightly in AITA but declines sharply in AITAH, from approximately 11\% to 7\%. 
 
 
 
@@ -213,20 +214,42 @@ Certainty / share changes over time
     \label{fig:minority-verdict-ratio}
 \end{figure}
 \subsection{RQ4: AITA/AITAH + shared post in different communities}
-\label{subsec:res-duplicates}
-
-Majority comments receive significantly lower median scores in AITAH than in AITA, based on 102 complete pairs.
-Minority comments receive significantly higher—or less negative—median scores in AITAH than in AITA, based on 77 complete pairs.
-Thus, the score separation between majority and minority comments is substantially larger in AITA.
-
-Of the 103 pairs meeting the $\mathrm{YANA\_total} \geq 20$ threshold, one was excluded because an AITAH post had an exact 50/50 verdict tie, making its majority status undefined. Minority comments receive significantly higher---or less negative---median scores in AITAH than in AITA, based on 77 complete pairs. The remaining 26 pairs were excluded because at least one copy contained no minority comments, so a minority-comment median could not be calculated. Thus, among posts for which each comparison was observable, the score separation between majority and minority comments was substantially larger in AITA.
-
 community behaviour difference. e.g. minority group is punished more in AITA
 
+\label{subsec:res-duplicates}
 
+\paragraph{Minority comments receive lower scores in AITA than in AITAH}
+
+
+% Majority comments receive significantly lower median scores in AITAH than in AITA, based on 102 complete pairs.
+% Minority comments receive significantly higher—or less negative—median scores in AITAH than in AITA, based on 77 complete pairs.
+% Thus, the score separation between majority and minority comments is substantially larger in AITA.
+
+Figure~\ref{fig:score-distribution-yana-ge20} presents the post-weighted distributions of median comment scores for majority- and minority-side judgments in matched AITA and AITAH posts. In both communities, majority-side comments generally receive positive scores, whereas minority-side comments generally receive negative scores. This consistent separation indicates that judgments aligned with the prevailing verdict are rewarded, while dissenting judgments are penalised.
+
+The majority--minority score gap is more pronounced in AITA. AITA majority comments attain higher positive scores than their AITAH counterparts, while AITA minority comments receive more strongly negative scores. In AITAH, the same directional pattern remains, but both the reward for majority agreement and the penalty for minority disagreement are less extreme. Overall, the results suggest that minority judgments face a systematic score disadvantage in both communities, with stronger score polarisation in AITA.
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth]{figures/score_distribution_yana_ge20.png}
     \caption{Post-weighted distributions of median majority- and minority-comment scores in matched AITA and AITAH posts with $\mathrm{YANA\_total} \geq 20$ in both copies.}
     \label{fig:score-distribution-yana-ge20}
+\end{figure}
+\paragraph{Defending-minority judgments become more prevalent in AITA.}
+Figure~\ref{fig:minority-verdict-ratio} compares the post-level minority-verdict ratio over the first 24 hours in 103 matched AITA--AITAH post pairs. In NA-dominant posts, where YA judgments constitute the minority, the two communities exhibit nearly identical and stable trajectories. The minority ratio remains approximately 9--10\% throughout the observation period, indicating little temporal change in the participation of commenters who accuse an OP whom the majority defends.
+
+A different pattern emerges in YA-dominant posts, where NA judgments constitute the minority. In AITAH, the minority ratio begins at approximately 24--25\% and declines to around 19\% during the first 10--12 hours, after which it remains relatively stable. In AITA, it begins at approximately 21--22\% and gradually increases to about 23\%. Consequently, the communities initially converge but subsequently diverge: over time, defending-minority judgments become relatively more prevalent in AITA and less prevalent in AITAH. The figure therefore suggests that temporal differences between the communities are concentrated among commenters who defend an OP condemned by the majority, rather than among those who accuse an OP defended by the majority. Because the uncertainty intervals overlap substantially, this divergence should be treated as descriptive unless confirmed by an inferential time-by-community interaction test.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\columnwidth]
+    {figures/minority_verdict_ratio_aita_aitah.png}
+    \caption{Post-weighted minority-verdict ratios during the first 24 hours
+    after post creation in 103 matched AITA--AITAH post pairs. The left panel
+    presents NA-dominant posts, in which YA judgments form the minority; the
+    right panel presents YA-dominant posts, in which NA judgments form the
+    minority. Lines represent community-level mean post-level minority ratios,
+    and shaded bands represent uncertainty intervals. Only matched post pairs
+    for which both copies had at least 20 final YA/NA judgments were included.}
+    \label{fig:minority-verdict-ratio}
 \end{figure}
