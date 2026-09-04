@@ -7,53 +7,55 @@
 
 Before comparing how the two sides are treated, it is worth establishing how
 often each situation arises across the $28{,}107$ AITA and $8{,}217$ AITAH
-high-volume posts (Table~\ref{tab:verdict-distribution}).
-
-\textbf{Consensus is the normal case, not a special one.} Consensual posts
-outnumber contested ones by more than an order of magnitude: $78.2\%$ of AITA
-posts and $81.6\%$ of AITAH posts have one side holding at least a four-to-one
-advantage, against $6.5\%$ and $4.7\%$ that fall in the $.4$--$.6$ band. The
-cohort on which the rest of this section concentrates is therefore the modal
+high-volume posts. The distribution of the YA share is sharply bimodal
+(Figure~\ref{fig:ya-share}): mass piles up against unanimous exculpation, a
+smaller peak sits at unanimous inculpation, and the middle is nearly empty.
+Consensual posts outnumber contested ones by more than an order of
+magnitude---$78.2\%$ against $6.5\%$ in AITA, $81.6\%$ against $4.7\%$ in
+AITAH---so the cohort the rest of this section concentrates on is the modal
 discussion in these communities, and the contested cohort is a small control
-rather than the other half of the data.
+rather than the other half of the data. The two peaks are themselves very
+unequal: the dominant verdict is NA in $75.7\%$ of AITA posts and $87.4\%$ of
+AITAH posts, with median YA shares of $8\%$ and $6\%$, so these crowds acquit
+far more often than they condemn, and the community without a formal verdict is
+the more lenient of the two. Within a post the minority is correspondingly
+small---a median of $4\%$ of verdicts in AITA and $6\%$ in AITAH, at or below
+$2\%$ in a quarter of posts, and only about a third even at the $90$th
+percentile (Table~\ref{tab:verdict-distribution}). The dissenter in a typical
+consensual thread is not one side of a split room but one voice among dozens.
 
-\textbf{Crowds mostly exonerate.} The dominant verdict is NA in $75.7\%$ of
-AITA posts and $87.4\%$ of AITAH posts, and the median YA share is $8\%$ and
-$6\%$ respectively. Whatever else these communities do, they acquit far more
-often than they condemn---and AITAH, the community without a formal verdict, is
-the more lenient of the two.
+The cohorts differ not only in where they end up but in when they get there. In
+consensual posts the verdict leading after a single comment is the eventual
+winner $86.5\%$ of the time, rising to $95.8\%$ after three, and $99.2\%$ never
+experience a lead change at all. Contested posts behave in the opposite way at
+every point: the leader after one comment predicts the winner $52.1\%$ of the
+time, indistinguishable from a coin flip, and even after $201$ comments only
+$83.5\%$; just $38.0\%$ avoid a lead change entirely, and $75.8\%$ have stopped
+changing hands by the halfway point, leaving roughly a quarter still reversing
+in the second half of the discussion.
 
-\textbf{Minorities are small.} The median post's minority holds $4\%$ of the
-verdicts in AITA and $6\%$ in AITAH; a quarter of posts have a minority at or
-below $2\%$, and even at the $90$th percentile the minority reaches only about
-a third. The dissenter in a typical consensual thread is thus not one side of a
-split room but one voice among dozens, which is what makes the per-comment
-treatment measured below a treatment of individuals rather than of factions.
+This bears directly on how the majority and minority labels should be read. We
+assign them from a post's final verdict, which no commenter could have
+observed, and that would be a serious objection if the final verdict were the
+product of a long contest. In the consensual cohort it is not: the winning side
+leads from the outset and never loses the lead, so the label assigned after the
+fact coincides with what was on the page while people were writing. The point
+is not that early commenters are unusually informative---a lopsided post makes
+early agreement likely by construction---but that a dissenter in a consensual
+thread was contradicting something already plainly visible. In contested posts
+no such correspondence exists, a further reason to treat that cohort as a
+control rather than as a second case of dissent.
 
-\textbf{A consensus is visible from the first comment; a contest never
-settles.} The two cohorts differ not only in where they end up but in when they
-get there. In consensual posts, the verdict that leads after a single comment
-is the one that eventually wins $86.5\%$ of the time, rising to $95.8\%$ after
-three comments, and $99.2\%$ of these posts never experience a single lead
-change: the side that is ahead at the start is ahead at the end. Contested
-posts behave in the opposite way at every point. The leading verdict after one
-comment predicts the winner $52.1\%$ of the time---indistinguishable from a
-coin flip---and even after $201$ comments the figure reaches only $83.5\%$.
-Just $38.0\%$ of contested posts avoid a lead change entirely, and only
-$75.8\%$ have stopped changing hands by the halfway point, so roughly a quarter
-are still reversing in the second half of the discussion.
-
-This matters for how the majority and minority labels should be read. We assign
-them from a post's final verdict, which no commenter could have observed, and
-that would be a serious objection if the final verdict were the product of a
-long contest. In the consensual cohort it is not: the winning side leads from
-the outset and never loses the lead, so the label we assign after the fact
-coincides with what was on the page while people were writing. The point is not
-that early commenters are unusually informative---a lopsided post makes early
-agreement likely by construction---but that a dissenter in a consensual thread
-was contradicting something already plainly visible. In contested posts no such
-correspondence exists, which is a further reason the contested cohort serves as
-a control rather than as a second case of dissent.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/ya_share_distribution.png}
+  \caption{Distribution of posts by YA share $\rho(p)$ over the high-volume
+  cohort. A share of $0$ means the crowd unanimously exculpated the OP, $1$
+  that it unanimously blamed them, and $0.5$ a dead tie. Both communities are
+  sharply bimodal with an almost empty middle, and the two modes are far from
+  symmetric: the exculpating peak is much the larger, especially in AITAH.}
+  \label{fig:ya-share}
+\end{figure*}
 
 One asymmetry bears on \S\ref{subsec:res-direction} and is easy to misread.
 Because NA-dominance is so much more common than YA-dominance, accusing dissent
