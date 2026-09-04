@@ -2,6 +2,102 @@
 \label{sec:results}
 
 
+\subsection{The shape of crowd verdicts}
+\label{subsec:res-distribution}
+
+Before comparing how the two sides are treated, it is worth establishing how
+often each situation arises across the $28{,}107$ AITA and $8{,}217$ AITAH
+high-volume posts (Table~\ref{tab:verdict-distribution}).
+
+\textbf{Consensus is the normal case, not a special one.} Consensual posts
+outnumber contested ones by more than an order of magnitude: $78.2\%$ of AITA
+posts and $81.6\%$ of AITAH posts have one side holding at least a four-to-one
+advantage, against $6.5\%$ and $4.7\%$ that fall in the $.4$--$.6$ band. The
+cohort on which the rest of this section concentrates is therefore the modal
+discussion in these communities, and the contested cohort is a small control
+rather than the other half of the data.
+
+\textbf{Crowds mostly exonerate.} The dominant verdict is NA in $75.7\%$ of
+AITA posts and $87.4\%$ of AITAH posts, and the median YA share is $8\%$ and
+$6\%$ respectively. Whatever else these communities do, they acquit far more
+often than they condemn---and AITAH, the community without a formal verdict, is
+the more lenient of the two.
+
+\textbf{Minorities are small.} The median post's minority holds $4\%$ of the
+verdicts in AITA and $6\%$ in AITAH; a quarter of posts have a minority at or
+below $2\%$, and even at the $90$th percentile the minority reaches only about
+a third. The dissenter in a typical consensual thread is thus not one side of a
+split room but one voice among dozens, which is what makes the per-comment
+treatment measured below a treatment of individuals rather than of factions.
+
+\textbf{A consensus is visible from the first comment; a contest never
+settles.} The two cohorts differ not only in where they end up but in when they
+get there. In consensual posts, the verdict that leads after a single comment
+is the one that eventually wins $86.5\%$ of the time, rising to $95.8\%$ after
+three comments, and $99.2\%$ of these posts never experience a single lead
+change: the side that is ahead at the start is ahead at the end. Contested
+posts behave in the opposite way at every point. The leading verdict after one
+comment predicts the winner $52.1\%$ of the time---indistinguishable from a
+coin flip---and even after $201$ comments the figure reaches only $83.5\%$.
+Just $38.0\%$ of contested posts avoid a lead change entirely, and only
+$75.8\%$ have stopped changing hands by the halfway point, so roughly a quarter
+are still reversing in the second half of the discussion.
+
+This matters for how the majority and minority labels should be read. We assign
+them from a post's final verdict, which no commenter could have observed, and
+that would be a serious objection if the final verdict were the product of a
+long contest. In the consensual cohort it is not: the winning side leads from
+the outset and never loses the lead, so the label we assign after the fact
+coincides with what was on the page while people were writing. The point is not
+that early commenters are unusually informative---a lopsided post makes early
+agreement likely by construction---but that a dissenter in a consensual thread
+was contradicting something already plainly visible. In contested posts no such
+correspondence exists, which is a further reason the contested cohort serves as
+a control rather than as a second case of dissent.
+
+One asymmetry bears on \S\ref{subsec:res-direction} and is easy to misread.
+Because NA-dominance is so much more common than YA-dominance, accusing dissent
+is available in roughly three quarters of AITA posts and seven eighths of AITAH
+posts, while defending dissent is confined to the remaining $24.1\%$ and
+$12.4\%$. The imbalance is in posts, not in comments. Dissent is proportionally
+far more common in YA-dominant threads than in NA-dominant ones, so the
+defending condition draws a comparable volume of comments from many fewer
+threads \textbf{[TODO: report comment counts per condition]}. What differs
+between the two conditions is therefore the kind of thread each is embedded
+in---defending dissent occurs where dissent is ordinary, accusing dissent where
+it is rare---which is precisely why each is read against the majority comments
+of its own post type rather than against each other's.
+
+\begin{table}[t]
+  \centering
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    & AITA & AITAH \\
+    \midrule
+    Posts & $28{,}107$ & $8{,}217$ \\
+    \addlinespace
+    NA-dominant ($\rho(p)<.5$) & $75.7\%$ & $87.4\%$ \\
+    YA-dominant ($\rho(p)>.5$) & $24.1\%$ & $12.4\%$ \\
+    \addlinespace
+    Consensual ($\rho(p)\le.2$ or $\ge.8$) & $78.2\%$ & $81.6\%$ \\
+    Contested ($.4\le\rho(p)\le.6$) & $6.5\%$ & $4.7\%$ \\
+    \addlinespace
+    Median YA share $\rho(p)$ & $8\%$ & $6\%$ \\
+    \addlinespace
+    Minority share, $10$th pct.\ & $0\%$ & $0\%$ \\
+    \quad $25$th & $2\%$ & $2\%$ \\
+    \quad $50$th & $4\%$ & $6\%$ \\
+    \quad $75$th & $18\%$ & $14\%$ \\
+    \quad $90$th & $34\%$ & $32\%$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Distribution of crowd verdicts over the high-volume cohort. The
+  dominance rows do not sum to $100\%$ because exact ties are dropped, and the
+  consensual and contested rows leave out the intermediate bands. Minority
+  share is the fraction of a post's verdicts falling on the non-dominant side.}
+  \label{tab:verdict-distribution}
+\end{table}
+
 \subsection{RQ1: Minority judgments are treated differently under consensus}
 \textbf{[TODO]}
 \begin{itemize}
@@ -183,11 +279,16 @@ discontinuity at the $18$-hour verdict flair
 dissent in AITA more assertive therefore accumulates over the course of a
 discussion instead of switching on when the verdict is posted, which points to
 a gradual shift in the conversational environment---and in which dissenters are
-still speaking---rather than to an immediate effect of the announcement.
+still speaking---rather than to an immediate effect of the announcement. The
+absence of a jump is also what the verdict dynamics of
+\S\ref{subsec:res-distribution} would lead one to expect: in $99.2\%$ of
+consensual posts the winning verdict leads from the first comment, so by the
+$18$-hour mark the flair states officially what the thread has displayed for
+hours, and there is little left for it to reveal.
 \textbf{[TODO: relabel YA/NA in AITAH]}
 
 \paragraph{Minority verdict ratio over time.}
-Figure~\ref{fig:minority-verdict-ratio} shows minority participation develops differently depending on whether the minority accuses or defends the OP. In both communities, accusing minorities in NA-dominant posts remain relatively stable or gradually increase over time. By contrast, defending minorities in YA-dominant posts follow different trajectories: their cumulative share rises slightly in AITA but declines sharply in AITAH, from approximately 11\% to 7\%. 
+Figure~\ref{fig:minority-ratio-time} shows minority participation develops differently depending on whether the minority accuses or defends the OP. In both communities, accusing minorities in NA-dominant posts remain relatively stable or gradually increase over time. By contrast, defending minorities in YA-dominant posts follow different trajectories: their cumulative share rises slightly in AITA but declines sharply in AITAH, from approximately 11\% to 7\%. 
 
 
 
@@ -228,7 +329,7 @@ Certainty / share changes over time
     Minority participation remains comparatively stable in AITA, whereas
     the share of defending minorities in YA-dominant AITAH posts declines
     over time.}
-    \label{fig:minority-verdict-ratio}
+    \label{fig:minority-ratio-time}
 \end{figure}
 \subsection{RQ4: AITA/AITAH + shared post in different communities}
 community behaviour difference. e.g. minority group is punished more in AITA
@@ -252,7 +353,7 @@ The majority--minority score gap is more pronounced in AITA. AITA majority comme
     \label{fig:score-distribution-yana-ge20}
 \end{figure}
 \paragraph{Defending-minority judgments become more prevalent in AITA.}
-Figure~\ref{fig:minority-verdict-ratio} compares the post-level minority-verdict ratio over the first 24 hours in 103 matched AITA--AITAH post pairs. In NA-dominant posts, where YA judgments constitute the minority, the two communities exhibit nearly identical and stable trajectories. The minority ratio remains approximately 9--10\% throughout the observation period, indicating little temporal change in the participation of commenters who accuse an OP whom the majority defends.
+Figure~\ref{fig:minority-ratio-matched} compares the post-level minority-verdict ratio over the first 24 hours in 103 matched AITA--AITAH post pairs. In NA-dominant posts, where YA judgments constitute the minority, the two communities exhibit nearly identical and stable trajectories. The minority ratio remains approximately 9--10\% throughout the observation period, indicating little temporal change in the participation of commenters who accuse an OP whom the majority defends.
 
 A different pattern emerges in YA-dominant posts, where NA judgments constitute the minority. In AITAH, the minority ratio begins at approximately 24--25\% and declines to around 19\% during the first 10--12 hours, after which it remains relatively stable. In AITA, it begins at approximately 21--22\% and gradually increases to about 23\%. Consequently, the communities initially converge but subsequently diverge: over time, defending-minority judgments become relatively more prevalent in AITA and less prevalent in AITAH. The figure therefore suggests that temporal differences between the communities are concentrated among commenters who defend an OP condemned by the majority, rather than among those who accuse an OP defended by the majority. Because the uncertainty intervals overlap substantially, this divergence should be treated as descriptive unless confirmed by an inferential time-by-community interaction test.
 
@@ -268,5 +369,5 @@ A different pattern emerges in YA-dominant posts, where NA judgments constitute 
     minority. Lines represent community-level mean post-level minority ratios,
     and shaded bands represent uncertainty intervals. Only matched post pairs
     for which both copies had at least 20 final YA/NA judgments were included.}
-    \label{fig:minority-verdict-ratio}
+    \label{fig:minority-ratio-matched}
 \end{figure}
