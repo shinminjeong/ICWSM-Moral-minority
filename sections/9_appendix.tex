@@ -88,6 +88,38 @@ report agreement against human labels on a validation sample]}
 
 
 
+\subsection{RQ2 Response Annotation}
+\label{sec:appendix-rq2-annotation}
+
+This section documents the current prompt template for the direct-response
+analysis in \S\ref{subsec:method-rq2}. It classifies a child reply's main
+communicative response to its immediate parent as agreement/support,
+disagreement/challenge, clarification/information-seeking, or other.
+The original post provides context. The template supplies no explicit
+minority/majority labels, agreement-level metadata, or comment scores;
+these analytical variables are kept separate from the annotation input.
+
+\textbf{[TODO:]} current template; validation pending. Confirm the final prompt
+version after validation and ensure that the template reproduced here matches
+the version used for the reported annotations.
+
+Figure~\ref{fig:rq2-prompt} presents the system prompt, including the category
+definitions, boundary rules, and JSON output schema. In the user template, the Pair ID and four text
+placeholders are filled with the identifier, post title and body, parent
+comment, and direct child reply, respectively.
+
+\input{components/box_rq2_prompt}
+
+\paragraph{Human validation and illustrative exchanges.}
+\textbf{[TODO:]} report the validation sample and annotation procedure, annotator
+agreement and adjudication where applicable, model/version and decoding
+settings, and performance by response category. State whether validation cases
+were used to refine the prompt or reserved for held-out evaluation. Add a small
+set of verified parent--child examples, including rhetorical challenges and
+genuine information requests; distinguish illustrative examples from evidence
+about response prevalence.
+
+
 \subsection{Cross-Community User Overlap}
 \label{sec:appendix-overlap}
 

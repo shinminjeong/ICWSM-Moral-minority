@@ -96,8 +96,9 @@ confounding from AITA's longer history and period-specific changes.
 \subsubsection{Post-content comparability.}
 To assess whether the communities discuss comparable situations, we encode post
 texts as $768$-dimensional vectors using
-\texttt{BAAI/bge-base-en-v1.5} and \texttt{intfloat/e5-base-v2}
-\textbf{[TODO: cite BGE and E5, and add both to the bibliography]}.
+\texttt{BAAI/bge-base-en-v1.5} \citep{bge_embedding} and
+\texttt{intfloat/e5-base-v2} \citep{wang2022text}.
+% \textbf{[TODO: cite BGE and E5, and add both to the bibliography]}.
 For each encoder, we examine a UMAP projection, train a classifier to predict
 the source community from the embedding, and report ROC-AUC
 \textbf{[TODO: specify the classifier family and its evaluation protocol ---
@@ -135,9 +136,12 @@ Appendix~\ref{sec:appendix-timing} reports the full distributions.
 
 \subsubsection{Duplicate posts.}
 We identify cross-community duplicates by exact text matching rather than
-semantic similarity. After text normalization
-\textbf{[TODO: define the normalization steps]}, two
-submissions are treated as the same story when their concatenated title and
+semantic similarity. We concatenate each post's title and body, apply Unicode NFKC normalization and case folding, collapse consecutive whitespace characters into a single space, and remove leading and
+trailing whitespace. Posts with empty bodies or bodies marked as [deleted] or [removed] are excluded. Cross-community duplicates are identified by matching SHA-256 hashes of the normalized text.
+
+After text normalization,
+% \textbf{[TODO: define the normalization steps]}, 
+two submissions are treated as the same story when their concatenated title and
 selftext are identical character for character. A story submitted multiple
 times in either community may therefore produce multiple cross-community pairs.
 A pair is included in the paired analysis only when the YA share can be computed
@@ -203,3 +207,34 @@ eligible comments, and certainty is computed for the annotated subset. Because
 recursive traversal of every reply tree is computationally expensive, reply
 depth and thread score are computed on a uniform random sample of posts; the
 sample size is reported with the corresponding analyses.
+
+
+\subsection{RQ2: Identifying and classifying direct responses}
+\label{subsec:method-rq2}
+
+\textbf{[TODO: develop the RQ2-specific methods below; refer to the shared
+judgment definitions above.]}
+\begin{itemize}
+    \item \textbf{Scope and reply pairs.} Focus on high-agreement posts
+    ($\rho(p)\le 0.20$ or $\rho(p)\ge 0.80$). Define top-level parent--direct
+    child pairs and the minority/majority comparison within each post type.
+    Clarify that minority status is assigned retrospectively from the final
+    judgment distribution. Confirm the volume threshold and temporal window
+    against the shared dataset definition; report exclusions and sample counts.
+    \item \textbf{Sampling and response categories.} Describe the sampling
+    frame and design across community, dominant judgment, and parent stance.
+    Define agreement/support, disagreement/challenge,
+    clarification/information-seeking, and other. Classify the child's response
+    to its parent, using the post as context; specify text eligibility and the
+    handling of mixed replies.
+    \item \textbf{Annotation and validation.} Report the model/version,
+    annotation procedure, human-validation design, and agreement/error analysis
+    once completed. The current prompt template and placeholders for validation
+    details are in Appendix~\ref{sec:appendix-rq2-annotation}, separate from
+    certainty annotation.
+    % \item \textbf{Comparison and uncertainty.} Specify the final estimands,
+    % sampling weights where applicable, and treatment of within-post dependence.
+    % Distinguish all-parent reply incidence (including zero-reply parents) from
+    % response-type proportions among eligible observed pairs. Describe missing
+    % labels separately from the other category.
+\end{itemize}
