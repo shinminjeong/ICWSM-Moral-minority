@@ -24,7 +24,11 @@ $2\%$ in a quarter of posts, and only about a third even at the $90$th
 percentile (Table~\ref{tab:verdict-distribution}). The dissenter in a typical
 high-agreement thread is not one side of a split room but one voice among dozens.
 
-The cohorts differ not only in where they end up but in when they get there. In
+The cohorts differ not only in where they end up but in when they get there.
+Figure~\ref{fig:consensus-stabilization} tracks the fraction of posts whose
+running verdict leader matches the final winner at successive comment-arrival
+checkpoints. The early lead is much more predictive in high-agreement posts
+than in low-agreement posts. In
 high-agreement posts the verdict leading after a single comment is the eventual
 winner $86.5\%$ of the time, rising to $95.8\%$ after three, and $99.2\%$ never
 experience a lead change at all. Low-agreement posts behave in the opposite way at
@@ -55,6 +59,25 @@ control rather than as a second case of dissent.
   sharply bimodal with an almost empty middle, and the two modes are far from
   symmetric: the exculpating peak is much the larger, especially in AITAH.}
   \label{fig:ya-share}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/consensus_stabilization.png}
+  \caption{Early verdict leaders predict the final winner more reliably in
+  high-agreement posts than in low-agreement posts. Top-level verdict comments
+  (NTA/NAH versus YTA/ESH; INFO excluded) are ordered by arrival, and the running
+  YA share after each comment determines the current leader. The vertical axis
+  reports the percentage of posts whose leader at each checkpoint matches the
+  final winner: $100\%$ indicates complete correspondence at that checkpoint,
+  while the dashed $50\%$ line is a coin-flip reference. Each post contributes
+  one observation per checkpoint, giving posts equal weight regardless of
+  thread size. Odd-numbered checkpoints ($1,3,5,11,\ldots,201$) avoid running
+  ties at even comment counts and the resulting parity-driven oscillations.
+  High-agreement and low-agreement cohorts are defined by the final YA share
+  recomputed from the comments analyzed here. The sample comprises posts with
+  $\mathrm{YANA\_total}\geq200$.}
+  \label{fig:consensus-stabilization}
 \end{figure*}
 
 One asymmetry bears on \S\ref{subsec:res-direction} and is easy to misread.
