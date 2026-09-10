@@ -61,9 +61,9 @@ control rather than as a second case of dissent.
   \label{fig:ya-share}
 \end{figure*}
 
-\begin{figure*}[t]
+\begin{figure}[t]
   \centering
-  \includegraphics[width=\textwidth]{figures/consensus_stabilization.png}
+  \includegraphics[width=\linewidth]{figures/consensus_stabilization.png}
   \caption{Early verdict leaders predict the final winner more reliably in
   high-agreement posts than in low-agreement posts. Top-level verdict comments
   (NTA/NAH versus YTA/ESH; INFO excluded) are ordered by arrival, and the running
@@ -78,7 +78,7 @@ control rather than as a second case of dissent.
   recomputed from the comments analyzed here. The sample comprises posts with
   $\mathrm{YANA\_total}\geq200$.}
   \label{fig:consensus-stabilization}
-\end{figure*}
+\end{figure}
 
 One asymmetry bears on \S\ref{subsec:res-direction} and is easy to misread.
 Because NA-dominance is so much more common than YA-dominance, blaming dissent
@@ -123,7 +123,7 @@ of its own post type rather than against each other's.
   \label{tab:verdict-distribution}
 \end{table}
 
-\subsection{RQ1: Minority judgments are treated differently under consensus}
+\subsection{RQ1: Minority judgments are treated differently under high-agreement}
 \textbf{[TODO]}
 \begin{itemize}
     \item Check whether RQ1 matches these four main results. Get the code and go through the experiments and figures again.
@@ -356,8 +356,8 @@ Figure~\ref{fig:minority-ratio-time} shows minority participation develops diffe
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth]{figures/time_series_certainty.png}
-    \caption{\textbf{Majority voices remain more certain, and minority
-    certainty rises over time in AITA only.}
+    \caption{\textbf{Minority certainty continues to increase beyond the 18-hour mark in AITA,
+whereas it declines in AITAH.}
     Mean certainty of majority- and minority-side comments during the first
     25 hours after submission. The vertical dashed line marks AITA's
     approximately 18-hour AutoModerator verdict-flair lock; it is shown for
